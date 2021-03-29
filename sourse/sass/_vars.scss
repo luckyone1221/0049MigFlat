@@ -5,8 +5,6 @@ $path2: '@2x/';
 $path1: '@1x/';
 $rfs-breakpoint: 1200px !default;
 
-
-
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
@@ -25,6 +23,7 @@ $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
+$gray-990: #010101 !default;
 $black: #000 !default;
 // scss-docs-end gray-color-variables
 
@@ -49,6 +48,7 @@ $purple: #6f42c1 !default;
 $pink: #d63384 !default;
 $red: #dc3545 !default;
 $orange: #fd7e14 !default;
+$skinny: #B49676;
 $yellow: #ffc107 !default;
 $green: #198754 !default;
 $teal: #20c997 !default;
@@ -72,7 +72,7 @@ $colors: ("blue": $blue,
 // scss-docs-end colors-map
 
 // scss-docs-start theme-color-variables
-$primary: $blue !default;
+$primary: $skinny !default;
 $secondary: $gray-600 !default;
 $success: $green !default;
 $info: $cyan !default;
@@ -273,7 +273,7 @@ $position-values: (0: 0,
 // Settings for the `<body>` element.
 
 $body-bg: $white !default;
-$body-color: $gray-900 !default;
+$body-color: #656565 !default;
 $body-text-align: null !default;
 
 
@@ -308,7 +308,8 @@ $grid-breakpoints: (xs: 0,
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1400px) !default;
+  xxl: 1500px,
+  base: 1800px) !default;
 // scss-docs-end grid-breakpoints
 
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
@@ -427,7 +428,7 @@ $font-size-lg: $font-size-base * 1.25 !default;
 
 $font-weight-lighter: lighter !default;
 $font-weight-light: 300 !default;
-$font-weight-normal: 400 !default;
+$font-weight-normal: 500 !default;
 $font-weight-bold: 700 !default;
 $font-weight-bolder: bolder !default;
 
@@ -437,12 +438,12 @@ $line-height-base: 1.5 !default;
 $line-height-sm: 1.25 !default;
 $line-height-lg: 2 !default;
 
-$h1-font-size: $font-size-base * 2.5 !default;
-$h2-font-size: $font-size-base * 2 !default;
-$h3-font-size: $font-size-base * 1.75 !default;
-$h4-font-size: $font-size-base * 1.5 !default;
-$h5-font-size: $font-size-base * 1.25 !default;
-$h6-font-size: $font-size-base !default;
+$h1-font-size: rem(48) !default;
+$h2-font-size: rem(32) !default;
+$h3-font-size: rem(28) !default;//
+$h4-font-size: rem(24) !default;
+$h5-font-size: rem(20);
+$h6-font-size: rem(18);
 
 // scss-docs-start font-sizes
 $font-sizes: (1: $h1-font-size,

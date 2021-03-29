@@ -263,8 +263,7 @@ function eventHandler() {
 	JSCCommon.animateScroll(); // JSCCommon.CustomInputFile(); 
 
 	var x = window.location.host;
-	var screenName;
-	screenName = document.body.dataset.bg;
+	var screenName = '01.png';
 
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
@@ -311,6 +310,15 @@ function eventHandler() {
 		slideToClickedSlide: true,
 		freeModeMomentum: true
 	})); // modal window
+	//luckyone js
+
+	var thisYear = new Date().getFullYear();
+	$('.set-curr-year-js').each(function () {
+		this.innerHTML = thisYear;
+	}); //end luckyone js
+	//todo
+	//1.clean js file
+	//2.
 }
 
 ;
@@ -319,10 +327,4 @@ if (document.readyState !== 'loading') {
 	eventHandler();
 } else {
 	document.addEventListener('DOMContentLoaded', eventHandler);
-} // window.onload = function () {
-// 	document.body.classList.add('loaded_hiding');
-// 	window.setTimeout(function () {
-// 		document.body.classList.add('loaded');
-// 		document.body.classList.remove('loaded_hiding');
-// 	}, 500);
-// }
+}

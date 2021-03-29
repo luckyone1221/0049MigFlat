@@ -1,0 +1,110 @@
+mixin sMain(data)
+	// start sMain
+	+b.SECTION.sMain#sMain&attributes(attributes)
+		+e.container
+			+pic('main-bg.jpg')(class="sMain__bg")
+			+e.row.row
+				//-1 row
+				+e.col--default.off-x2.col-lg-2.offset-lg-4(href="#")
+					+e.txt О компании
+				//-
+				+e.col--header.x2.off-x2.col-lg-4.offset-lg-2
+					+mHeader()
+				//-2 row
+				+e.col--default.off-x1.col-lg-2.offset-lg-2(href="#")
+					+e.txt Команда
+				//-
+				+e.col--primary.col-lg-2
+					+e.logo(href='#')
+						img(loading="lazy" src="img/svg/txt-logo-white.svg" alt="")
+					+e.H4.logo-name.mb-0
+						| Московская
+						br
+						| инвестиционная
+						br
+						| группа
+						br
+						| квартир
+				//-
+				+e.col--title.x3.col-lg-6.me-auto
+					+e.H1.title Продажа квартир бизнес и премиум класса с ремонтом из наличия и на заказ в Москве и МО
+				//-3 row
+				+e.col--default.off-x1.col-lg-2(href="#")
+					+e.txt
+						| Квартиры
+						br
+						| с ремонтом
+						br
+						| в продаже
+				//-
+				+e.col--default.col-lg-2(href="#")
+					+e.txt Trade in
+					+e.descr
+						| Обмен вашей квартиры без ремонта на нашу квартиру с ремонтом с&nbsp;доплатой
+				//-
+				+e.col--black.col-lg-2(href="#")
+					+e.txt--primary
+						| MIGFlat
+						br
+						| бронирование
+					+e.descr
+						| Купить квартиру
+						br
+						| из наличия
+				//-
+				+e.col--black.off-x1.col-lg-2.offset-lg-2.offset-xxl-0(href="#")
+					+e.txt--primary
+						| MIGFlat
+						br
+						| Individual
+					+e.descr
+						| Индивидуальная работа под вашу задачу
+				//-
+				+e.col--default.col-lg-2(href='#')
+					+e.txt.mb-auto
+						| Наши
+						br
+						| работы
+				//-4 row
+				+e.col--footer.x2.col-lg-4
+					+mfooter()
+				+e.col--default.off-x2.col-lg-2.offset-lg-2(href='#')
+					+e.txt.mb-auto Контакты
+	// end sMain
+
+mixin mHeader()
+	+b.HEADER.m-header
+		+e.row.row.align-items-center
+			+e.tell-col.col
+				+e.tell(href='tel:+74957440086') +7 495 744 00 86
+			+e.wa-col.col-auto
+				+e.wa(href="ttps://wa.me/1XXXXXXXXXX?text=Здравствуйте!%20У%20меня%20есть%20несколько%20вопросов.")
+					img(loading="lazy" src="img/svg/m-h-wa.svg" alt="")
+		+e.foot.text-sm-end
+			+e.location Москва, ул. Воронцовские Пруды, д.3
+			+e.mail(href='mailto:info@migflat.ru') info@migflat.ru
+			+e.call-back(href='#') Обратный звонок
+
+mixin mfooter()
+	+b.FOOTER.m-footer
+		+footerSoc()
+		+footerPolicy()
+
+mixin footerSoc(addClasses)
+	+b.footer-soc.row(class=addClasses)
+		.col-auto
+			+e.link(href='#')
+				img(loading="lazy" src='img/svg/inst.svg' alt="")
+		.col-auto
+			+e.link(href='#')
+				img(loading="lazy" src='img/svg/yt.svg' alt="")
+
+mixin footerPolicy(addClasses)
+	+b.footer-policy.row.align-items-center(class=addClasses)
+		.col-auto
+			+e.year
+				| ©
+				|
+				span.set-curr-year-js 2021
+		.col
+			+e.policy(href='#') Политика конфиденциальности
