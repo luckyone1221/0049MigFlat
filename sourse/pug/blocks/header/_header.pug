@@ -1,5 +1,14 @@
 mixin header()
 	// start header
 	+b.HEADER.header#header&attributes(attributes)
-		block
+		+e.row.row.align-items-center
+			.col-auto
+				+e.tell(href='tel:+74955555555') + 7 495 555 55 55
+			.col-auto
+				+e.call-back(href="#") Обратный звонок
+			.col-auto
+				+e.reserve-btn(href='#') MIGFlat бронирование
+			.col-auto
+				+e.burger.burger-js
+					span
 	// end header

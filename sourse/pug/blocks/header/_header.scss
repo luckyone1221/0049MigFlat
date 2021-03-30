@@ -1,29 +1,75 @@
+// start .header
+.header {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: $white;
+	padding: rem(36) rem(42);
 
-	// start .header
-	.header {
-		 
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-up(xs) {}
-	
-	//
-	@include media-breakpoint-between(md, xl) { }
-	
-	
-	//
-	@include media-breakpoint-only(xs) {}
-	@include media-breakpoint-only(sm) {}
-	@include media-breakpoint-only(md) {}
-	@include media-breakpoint-only(lg) {}
-	@include media-breakpoint-only(xl) {}
-	
-	//
-	@include media-breakpoint-down(xl) {}
-	@include media-breakpoint-down(lg) {}
-	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
+	&__row{
+		@include media-breakpoint-up(xxl){
+			@include roww(rem(42px));
+		}
+	}
+	&__tell{
+		font-weight: 600;
+		line-height: (19/16);
 
+		letter-spacing: 0.04em;
+		color: $black;
+		&:hover{
+			color: rgba($black, .8);
+		}
+	}
+	&__call-back{
+		font-weight: 600;
+		font-size: 14px;
+		line-height: (17/14);
+	}
+	&__reserve-btn{
+		@extend .btn;
+		@extend .btn-primary;
+
+		@include media-breakpoint-up(xxl){
+			margin-left: 22px;
+		}
+	}
+	&__burger{
+		width: rem(40);
+		height: rem(40);
+		position: relative;
+
+		@include media-breakpoint-up(xxl){
+			margin-left: 6px;
+		}
+
+		span,
+		span:before,
+		span:after{
+			@include mt();
+			content: '';
+			position: absolute;
+			right: 0;
+			height: 1px;
+			background: $black;
+			&:hover{
+				width: 100%;
+			}
+		}
+
+		span{
+			width: 100%;
+			top: 50%;
+		}
+		span:before{
+			width: 100%;
+			top: -8px;
+		}
+		span:after{
+			width: rem(24);
+			bottom: -8px;
+		}
+	}
+	&__{}
+	&__{}
 } // end.header

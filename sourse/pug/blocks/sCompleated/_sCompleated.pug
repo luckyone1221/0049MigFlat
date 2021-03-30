@@ -2,8 +2,17 @@ mixin sCompleated(data)
 	// start sCompleated
 	+b.SECTION.sCompleated.section#sCompleated&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sCompleated
+			+b.section-title
+				h1 Выполненные работы
 				
 			.row
 	// end sCompleated
+
+mixin sTitle(txt)
+	+b.section-title
+		+e.row.row
+			.col-auto
+				+e.back-link(href='#')
+					+icon('arrow-left')
+			.col
+				h1=txt
