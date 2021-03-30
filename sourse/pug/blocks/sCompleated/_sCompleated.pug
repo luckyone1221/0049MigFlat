@@ -1,12 +1,41 @@
 mixin sCompleated(data)
 	// start sCompleated
 	+b.SECTION.sCompleated.section#sCompleated&attributes(attributes)
-		.container
-			+b.section-title
-				h1 Выполненные работы
-				
-			.row
+		+e.container.container-fluid
+			+sTitle()
+				| Выполненные
+				|
+				br.d-sm-none
+				| работы
+			+e.slider-wrap
+				.swiper-container.sCompleated-slider-js
+					.swiper-wrapper
+						+compleatedSlide(1,'3-х квартира в ЖК Сердцева',18, 1)
+							| 3-х квартира
+							|
+							br.d-sm-none
+							| в ЖК Сердцева
+						+compleatedSlide(2,'Дом в КП Мартемьяново',10, 0)
+						+compleatedSlide(3,'Квартира в ЖК Измайловский ',12, 2)
 	// end sCompleated
+
+mixin compleatedSlide(imgNum, name, phot, vid)
+	.swiper-slide
+		if block
+			//br can be removed, need them for pp
+			+e.H2.name(href="#")
+				block
+		else
+			+e.H2.name(href="#")=name
+		+e.img(href="#")
+			img.swiper-lazy(src="#" data-src=`img/@2x/compleated-${imgNum}.jpg` alt="")
+		+e.foot
+			+e.f-row.row
+				.col-auto
+					+e.lower-link(href='#')=`${phot} фотографий`
+				if vid
+					.col-auto
+						+e.lower-link(href='#')=`${vid} видео`
 
 mixin sTitle(txt)
 	+b.section-title
@@ -15,4 +44,9 @@ mixin sTitle(txt)
 				+e.back-link(href='#')
 					+icon('arrow-left')
 			.col
-				h1=txt
+				if block
+					//br can be removed, need them for pp
+					h1.mb-0
+						block
+				else
+					h1.mb-0=txt

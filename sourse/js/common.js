@@ -253,7 +253,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
-	let screenName = '01-320.png';
+	let screenName = '02-320.png';
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
@@ -317,6 +317,33 @@ function eventHandler() {
 	$('.set-curr-year-js').each(function (){
 		this.innerHTML = thisYear;
 	});
+
+	//css vars
+	let header = document.querySelector(".header--js");
+	function calcCssVars() {
+		document.documentElement.style.setProperty('--header-w', `${header.offsetWidth}px`);
+	}
+
+	window.addEventListener('resize', calcCssVars, { passive: true });
+	window.addEventListener('scroll', calcCssVars, { passive: true });
+	calcCssVars();
+	//sCompleated
+	let sCompleatedSlider = new Swiper('.sCompleated-slider-js', {
+		...defaultSl,
+		slidesPerView: 'auto',
+		breakpoints: {
+			0:{
+
+			},
+			992:{
+				spaceBetween: 40,
+			},
+			1800:{
+				spaceBetween: 64,
+			},
+		},
+	});
+
 	//end luckyone js
 
 	//todo

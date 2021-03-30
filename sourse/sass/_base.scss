@@ -461,3 +461,54 @@ a{
 .btn-primary{
 	color: $white!important;
 }
+
+.container, .container-fluid{
+	padding-left: var(--cont-x-padd, 20px);
+	padding-right: var(--cont-x-padd, 20px);
+}
+
+//
+.accept-ratio-frame{
+	display: block;
+	width: 100%;
+	height: 0;
+	position: relative;
+
+	//background-color: $black;
+	overflow: hidden;
+	&:hover{
+		img{
+			// opacity: .8;
+			filter: brightness(110%);
+			//transform: scale(1.1);
+		}
+	}
+
+	img{
+		@include mt();
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+.accept-ratio-frame-nh{
+	display: block;
+	width: 100%;
+	height: 0;
+	position: relative;
+
+	overflow: hidden;
+
+	img{
+		@include mt();
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}

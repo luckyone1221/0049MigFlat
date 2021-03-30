@@ -1,14 +1,18 @@
 mixin header()
 	// start header
-	+b.HEADER.header#header&attributes(attributes)
+	+b.HEADER.header--js#header&attributes(attributes)
 		+e.row.row.align-items-center
 			.col-auto
 				+e.tell(href='tel:+74955555555') + 7 495 555 55 55
-			.col-auto
+			.col-auto.d-sm-none
+				+e.wa(href="ttps://wa.me/+74957440086?text=Здравствуйте!%20У%20меня%20есть%20несколько%20вопросов.")
+					img(loading="lazy" src="img/svg/m-h-wa.svg" alt="")
+			.col-auto.d-none.d-sm-block
 				+e.call-back(href="#") Обратный звонок
-			.col-auto
+			+e.btn-col.col-auto
 				+e.reserve-btn(href='#') MIGFlat бронирование
-			.col-auto
-				+e.burger.burger-js
+			.col.col-lg-auto.order-first.order-lg-0
+				+b.burger.d-sm-none.burger-js
+				+e.burger.d-sm-block.d-none.burger-js
 					span
 	// end header

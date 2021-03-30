@@ -263,7 +263,7 @@ function eventHandler() {
 	JSCCommon.animateScroll(); // JSCCommon.CustomInputFile(); 
 
 	var x = window.location.host;
-	var screenName = '01-320.png';
+	var screenName = '02-320.png';
 
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
@@ -315,7 +315,34 @@ function eventHandler() {
 	var thisYear = new Date().getFullYear();
 	$('.set-curr-year-js').each(function () {
 		this.innerHTML = thisYear;
-	}); //end luckyone js
+	}); //css vars
+
+	var header = document.querySelector(".header--js");
+
+	function calcCssVars() {
+		document.documentElement.style.setProperty('--header-w', "".concat(header.offsetWidth, "px"));
+	}
+
+	window.addEventListener('resize', calcCssVars, {
+		passive: true
+	});
+	window.addEventListener('scroll', calcCssVars, {
+		passive: true
+	});
+	calcCssVars(); //sCompleated
+
+	var sCompleatedSlider = new Swiper('.sCompleated-slider-js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		slidesPerView: 'auto',
+		breakpoints: {
+			0: {},
+			992: {
+				spaceBetween: 40
+			},
+			1800: {
+				spaceBetween: 64
+			}
+		}
+	})); //end luckyone js
 	//todo
 	//1.clean js file
 	//2.

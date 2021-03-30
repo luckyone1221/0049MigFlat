@@ -14,16 +14,20 @@
 	<body>
 		<div class="main-wrapper">
 			<!-- start header-->
-			<header class="header" id="header">
+			<header class="header header--js" id="header">
 				<div class="header__row row align-items-center">
 					<div class="col-auto"><a class="header__tell" href="tel:+74955555555">+ 7 495 555 55 55</a>
 					</div>
-					<div class="col-auto"><a class="header__call-back" href="#">Обратный звонок</a>
+					<div class="col-auto d-sm-none"><a class="header__wa" href="ttps://wa.me/+74957440086?text=Здравствуйте!%20У%20меня%20есть%20несколько%20вопросов."><img loading="lazy" src="img/svg/m-h-wa.svg" alt=""/></a>
 					</div>
-					<div class="col-auto"><a class="header__reserve-btn" href="#">MIGFlat бронирование</a>
+					<div class="col-auto d-none d-sm-block"><a class="header__call-back" href="#">Обратный звонок</a>
 					</div>
-					<div class="col-auto">
-						<div class="header__burger burger-js"><span></span>
+					<div class="header__btn-col col-auto"><a class="header__reserve-btn" href="#">MIGFlat бронирование</a>
+					</div>
+					<div class="col col-lg-auto order-first order-lg-0">
+						<div class="burger d-sm-none burger-js">
+						</div>
+						<div class="header__burger d-sm-block d-none burger-js"><span></span>
 						</div>
 					</div>
 				</div>
@@ -31,15 +35,95 @@
 			<!-- end header-->
 			<!-- start sCompleated-->
 			<section class="sCompleated section" id="sCompleated">
-				<div class="container">
+				<div class="sCompleated__container container-fluid">
 					<div class="section-title">
-						<h1>Выполненные работы</h1>
+						<div class="section-title__row row">
+							<div class="col-auto"><a class="section-title__back-link" href="#">
+								<svg class="icon icon-arrow-left ">
+									<use xlink:href="img/svg/sprite.svg#arrow-left"></use>
+								</svg></a>
+							</div>
+							<div class="col">
+								<!--br can be removed, need them for pp-->
+								<h1 class="mb-0">
+									Выполненные
+									<br class="d-sm-none"/>работы
+								</h1>
+							</div>
+						</div>
 					</div>
-					<div class="row"></div>
+					<div class="sCompleated__slider-wrap">
+						<div class="swiper-container sCompleated-slider-js">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<!--br can be removed, need them for pp-->
+									<h2 class="sCompleated__name" href="#">
+										3-х квартира
+										<br class="d-sm-none"/>в ЖК Сердцева
+									</h2><a class="sCompleated__img" href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/compleated-1.jpg" alt=""/></a>
+									<div class="sCompleated__foot">
+										<div class="sCompleated__f-row row">
+											<div class="col-auto"><a class="sCompleated__lower-link" href="#">18 фотографий</a>
+											</div>
+											<div class="col-auto"><a class="sCompleated__lower-link" href="#">1 видео</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<h2 class="sCompleated__name" href="#">Дом в КП Мартемьяново
+									</h2><a class="sCompleated__img" href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/compleated-2.jpg" alt=""/></a>
+									<div class="sCompleated__foot">
+										<div class="sCompleated__f-row row">
+											<div class="col-auto"><a class="sCompleated__lower-link" href="#">10 фотографий</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<h2 class="sCompleated__name" href="#">Квартира в ЖК Измайловский 
+									</h2><a class="sCompleated__img" href="#"><img class="swiper-lazy" src="#" data-src="img/@2x/compleated-3.jpg" alt=""/></a>
+									<div class="sCompleated__foot">
+										<div class="sCompleated__f-row row">
+											<div class="col-auto"><a class="sCompleated__lower-link" href="#">12 фотографий</a>
+											</div>
+											<div class="col-auto"><a class="sCompleated__lower-link" href="#">2 видео</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 			<!-- end sCompleated-->
-			<footer class="footer"></footer>
+			<footer class="footer">
+				<div class="footer__container container-fluid">
+					<div class="footer__row row">
+						<div class="col-md">
+							<div class="footer-policy row align-items-center">
+								<div class="col-lg-auto">
+									<div class="footer-policy__year">
+										©
+										<span class="set-curr-year-js">2021</span>
+									</div>
+								</div>
+								<div class="col-lg"><a class="footer-policy__policy" href="#">Политика конфиденциальности</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-auto">
+							<div class="footer-soc row">
+								<div class="col-auto"><a class="footer-soc__link" href="#"><img loading="lazy" src="img/svg/inst.svg" alt=""/></a>
+								</div>
+								<div class="col-auto"><a class="footer-soc__link" href="#"><img loading="lazy" src="img/svg/yt.svg" alt=""/></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
 			<!--+mob-mnu()-->
 			<!--+header()-->
 			<!--+top-nav()-->

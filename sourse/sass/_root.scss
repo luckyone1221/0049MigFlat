@@ -2,25 +2,28 @@
 	--animate-delay: 1.2s;
 
 	--fontSizeBase: 14px;
+	--cont-x-padd: 16px;
 	@include media-breakpoint-up(sm){
 		--fontSizeBase: 14.5px;
 	}
 	@include media-breakpoint-up(md){
 		--fontSizeBase: 15px;
+		--cont-x-padd: 20px;
 	}
 	@include media-breakpoint-up(lg){
 		--fontSizeBase: 15.5px;
 	}
 	@include media-breakpoint-up(xxl){
 		--fontSizeBase: #{$em-base};
+		--cont-x-padd: 40px;
 	}
 
-	--sPT: #{rem(80)};
-	--sPB: #{rem(90)};
-	--sTPB: #{rem(40)};
-	@include media-breakpoint-up(md) {
-		--sPT: #{rem(80)};
-		--sPB: #{rem(90)};
-		--sTPB: #{rem(40)};
+	--sPT: 20px;
+	--sPB: 20px;
+	--sTPB: 20px;
+	@include media-breakpoint-up(lg){
+		--sPT: 30px;
+		--sPB: 30px;
+		--sTPB: 30px;
 	}
 }
