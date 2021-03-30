@@ -1,13 +1,16 @@
 // start .sMain
 .sMain {
+	--sm-x-space: 16px;
+
 	&__container{
 		min-height: calc(var(--vh, 1vh) * 100);
 		position: relative;
 		z-index: 1;
+		overflow: hidden;
 	}
 	&__bg{
 		position: absolute;
-		z-index: -1;
+		z-index: -2;
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -18,13 +21,46 @@
 			height: 100%;
 			object-fit: cover;
 		}
+
+		&:after{
+			content: '';
+			@include media-breakpoint-up(lg){
+				content: none;
+			}
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba($black, .5);
+		}
 	}
 	&__row{
-		//-@include roww(1px,'m');
 		@include roww(0);
+
+		min-height: calc(var(--vh, 1vh) * 100);
+		flex-direction: column;
+		@include media-breakpoint-up(lg){
+			min-height: 0;
+			flex-direction: row;
+		}
 	}
 	&__col{
 		position: relative;
+		z-index: 1;
+		&:before{
+			@include media-breakpoint-up(lg){
+				content: '';
+			}
+			z-index: -1;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			width: calc(100% + 1px);
+			height: calc(100% + 1px);
+			border: 1px solid rgba($white, .3);
+		}
 
 		@include mt();
 		display: flex;
@@ -32,51 +68,101 @@
 		justify-content: flex-end;
 
 		text-decoration: none;
-		min-height: calc(var(--vh, 1vh) * 25);
+
+		@include media-breakpoint-up(lg){
+			min-height: calc(var(--vh, 1vh) * 25 - 0.125px);
+		}
+		@include media-breakpoint-up(xl){
+			min-height: #{'max(calc( (var(--vh, 1vh) * 25) - 0.125px), 220px)'};
+		}
 
 		&--default{
+			@include media-breakpoint-down(sm){
+				padding-bottom: 7px;
+			}
+			@include media-breakpoint-down(lg){
+				padding: 0 var(--sm-x-space, 16px) 10px var(--sm-x-space, 16px);
+			}
+
 			position: relative;
 			z-index: 1;
-			background: rgba(65, 59, 52, .6);
-			backdrop-filter: blur(5px);
 			color: $white;
 
-			&:hover{
-				background: $white;
-				color: $primary;
-
-				--descr-col: #{rgba($black,.5)};
+			@include media-breakpoint-up(lg){
+				background: rgba(65, 59, 52, .6);
+				backdrop-filter: blur(5px);
 			}
+
+			&:hover{
+				color: $white;
+				@include media-breakpoint-up(lg){
+					background: $white;
+					color: $primary;
+					--descr-col: #{rgba($black,.5)};
+				}
+			}
+
 		}
 
 
 		&--header{
 			display: block;
 			padding: 0!important;
+
+			order: -999;
+			@include media-breakpoint-up(lg){
+				order: 0;
+			}
 		}
 		&--primary{
 			background-color: $primary;
 		}
 		&--title{
-			background: rgba($black, .2);
+			@include media-breakpoint-down(lg){
+				padding: 18px var(--sm-x-space, 16px) 19px var(--sm-x-space, 16px);
+			}
+
+			order: -10;
+			@include media-breakpoint-up(lg){
+				order: 0;
+				background: rgba($black, .2);
+			}
 		}
 		&--black{
 			background: $black;
 
-			&:hover{
-				background: $white;
-				color: $primary;
+			@include media-breakpoint-down(lg){
+				max-width: calc(100% - (var(--sm-x-space, 16px) * 2));
+				margin: 0 var(--sm-x-space, 16px) rem(18) var(--sm-x-space, 16px);
+				padding: 13px 16px 16px;
+			}
 
-				--descr-col: #{rgba($black, .9)};
+			order: -1;
+			@include media-breakpoint-up(lg){
+				order: 0;
+				&:hover{
+					background: $white;
+					color: $primary;
+					--descr-col: #{rgba($black, .9)};
+				}
 			}
 		}
 		&--footer{
 			display: block;
 			padding: 0!important;
+
+			order: 999;
+			margin-top: auto;
+			@include media-breakpoint-up(lg){
+				order: 0;
+				margin: 0;
+			}
 		}
 
-
-		padding: rem(16);
+		//spacings
+		@include media-breakpoint-up(lg){
+			padding: rem(16);
+		}
 		@include media-breakpoint-up(xl){
 			padding: rem(20);
 		}
@@ -114,13 +200,21 @@
 
 	}
 	&__txt{
-		font-size: rem(20);
+		font-size: 16px;
+		@include media-breakpoint-up(sm){
+			font-size: rem(20);
+		}
 		@include media-breakpoint-up(xl){
 			font-size: rem(24);
 		}
 		line-height: 1.2;
 
 		&--primary{
+			margin-bottom: 4px;
+			@include media-breakpoint-up(lg){
+				margin-bottom: 0;
+			}
+
 			color: $primary;
 			font-weight: 600;
 		}
@@ -158,26 +252,42 @@
 		@include mt();
 		margin-top: auto;
 
-		font-size: rem(15);
+		font-size: 12px;
+		@include media-breakpoint-up(sm){
+			font-size: rem(15);
+		}
 		@include media-breakpoint-up(xl){
 			font-size: rem(16);
 		}
 		line-height: (19/16);
 		letter-spacing: 0.04em;
 
-		color: var(--descr-col, #{rgba($white, .5)});
+		color: $white;
+		@include media-breakpoint-up(lg){
+			color: var(--descr-col, #{rgba($white, .5)});
+		}
 	}
 	&__title{
 		font-weight: 800;
-		line-height: (52/48);
 		color: $white;
 		margin-bottom: 0;
 
-
-		@include media-breakpoint-up(sm){
+		letter-spacing: -0.3px;
+		line-height: (35/32);
+		font-size: 32px;
+		max-width: rem(500);
+		@include media-breakpoint-up(lg){
+			letter-spacing: normal;
+			line-height: (52/48);
 			font-size: rem(36);
+			max-width: 100%;
+		}
+		@include media-breakpoint-up(xl){
+			margin-top: -5px;
+			font-size: rem(44);
 		}
 		@include media-breakpoint-up(base){
+			margin-top: 0;
 			font-size: rem(48);
 		}
 	}
@@ -194,7 +304,10 @@
 	width: 100%;
 	min-height: 100%;
 
-	padding: rem(20);
+	padding: 12px 16px 16px 16px;
+	@include media-breakpoint-up(lg){
+		padding: rem(20);
+	}
 	@include media-breakpoint-up(xl){
 		padding: rem(30) rem(32);
 	}
@@ -202,24 +315,31 @@
 		padding: rem(35) rem(40);
 	}
 
+	.burger{
+		padding-top: 6px;
+		@include media-breakpoint-up(sm){
+			padding-top: 0;
+		}
+	}
+
 	&__row{
-		@include roww(rem(23px));
+		@include roww(23px);
 
 		& > *{
 			margin-bottom: 10px;
 		}
 		margin-bottom: -10px;
 
-		padding-bottom: rem(20);
+		padding-bottom: 21px;
+		@include media-breakpoint-up(lg){
+			padding-bottom: rem(20);
+		}
 		@include media-breakpoint-up(xl){
 			padding-bottom: rem(30);
 		}
 		@include media-breakpoint-up(base){
-			padding-bottom: rem(50);
+			padding-bottom: rem(56);
 		}
-	}
-	&__tell-col{
-
 	}
 	&__tell{
 		display: block;
@@ -227,17 +347,15 @@
 		font-weight: 600;
 
 		font-size: rem(24);
+		letter-spacing: 0.4px;
 		@include media-breakpoint-up(xl){
 			font-size: rem(30);
+			letter-spacing: 0.04em;
 		}
 		color: $white;
 		line-height: 1.2;
 
 		text-align: right;
-		letter-spacing: 0.04em;
-	}
-	&__wa-col{
-
 	}
 	&__wa{
 		width: 16px;
@@ -291,15 +409,74 @@
 		letter-spacing: 0.04em;
 		color: $primary;
 	}
+	&__mob-foot{
+		display: flex;
+		align-items: flex-end;
+	}
+	&__logo{
+		display: block;
+		max-width: 135px;
+		@include media-breakpoint-up(sm){
+			max-width: 200px;
+		}
+
+		img{
+			width: auto;
+			height: auto;
+			max-width: 100%;
+		}
+	}
+	&__logo-name{
+		margin-left: 43px;
+
+		font-size: 11px;
+		margin-bottom: 3px;
+		@include media-breakpoint-up(sm){
+			font-size: rem(16);
+			margin-bottom: 0;
+		}
+		letter-spacing: 0.04em;
+		line-height: 1.2;
+		text-transform: uppercase;
+		color: rgba($white, .5);
+	}
+	&__{}
 }
 
+.burger{
+	cursor: pointer;
+	width: 24px;
+	height: 24px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	&:before,
+	&:after{
+		content: '';
+		display: block;
+		width: 100%;
+		height: 1px;
+		background: $white;
+	}
+	&:before{
+		margin-bottom: 8px;
+	}
+}
+
+//.m-footer
 .m-footer{
 	min-height: 100%;
 	background: $white;
 	display: flex;
 	flex-direction: column;
 
-	padding: rem(20) rem(24);
+	padding: 28px 30px;
+	@include media-breakpoint-up(lg){
+		padding: rem(20) rem(24);
+	}
 	@include media-breakpoint-up(xl){
 		padding: rem(30) rem(32);
 	}
@@ -307,12 +484,25 @@
 		padding: rem(40);
 	}
 
-	.footer-policy{
-		margin-top: auto;
+	.footer-soc{
+		justify-content: center;
+		padding-bottom: 17px;
+		@include media-breakpoint-up(lg){
+			padding-bottom: 30px;
+			justify-content: flex-start;
+		}
 	}
 
-	.footer-soc{
-		padding-bottom: 30px;
+	.footer-policy{
+		margin-top: auto;
+
+		text-align: center;
+		flex-direction: column-reverse;
+		@include media-breakpoint-up(lg){
+			flex-direction: row;
+			text-align: left;
+		}
+
 	}
 }
 
@@ -326,8 +516,8 @@
 
 	&__link{
 		@include mt();
-		width: rem(32);
-		height: rem(32);
+		width: 32px;
+		height: 32px;
 		&:hover{
 			opacity: .8;
 		}
@@ -346,10 +536,20 @@
 	&__{}
 }
 .footer-policy{
+	& > *{
+		margin-bottom: 15px;
+	}
+	margin-bottom: -15px;
+
+
 	&__year{
 		line-height: (19/16);
 		letter-spacing: 0.04em;
 		color: $gray-990;
+
+		@include media-breakpoint-up(xxl){
+			padding-right: 40px;
+		}
 	}
 	&__policy{
 		display: block;

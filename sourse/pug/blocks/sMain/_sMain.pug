@@ -5,16 +5,19 @@ mixin sMain(data)
 			+pic('main-bg.jpg')(class="sMain__bg")
 			+e.row.row
 				//-1 row
-				+e.col--default.off-x2.col-lg-2.offset-lg-4(href="#")
+				+e.col.col-lg-2
+				+e.col.col-lg-2
+				+e.col--default.col-lg-2(href="#")
 					+e.txt О компании
 				//-
 				+e.col--header.x2.off-x2.col-lg-4.offset-lg-2
 					+mHeader()
 				//-2 row
-				+e.col--default.off-x1.col-lg-2.offset-lg-2(href="#")
+				+e.col.col-lg-2
+				+e.col--default.col-lg-2(href="#")
 					+e.txt Команда
 				//-
-				+e.col--primary.col-lg-2
+				+e.col--primary.col-lg-2.d-none.d-lg-block
 					+e.logo(href='#')
 						img(loading="lazy" src="img/svg/txt-logo-white.svg" alt="")
 					+e.H4.logo-name.mb-0
@@ -27,25 +30,34 @@ mixin sMain(data)
 						| квартир
 				//-
 				+e.col--title.x3.col-lg-6.me-auto
-					+e.H1.title Продажа квартир бизнес и премиум класса с ремонтом из наличия и на заказ в Москве и МО
+					+e.H1.title
+						| Продажа
+						| квартир&nbsp;бизнес
+						| и&nbsp;премиум класса с&nbsp;ремонтом
+						| из&nbsp;наличия
+						| и&nbsp;на&nbsp;заказ
+						| в&nbsp;Москве и&nbsp;МО
 				//-3 row
 				+e.col--default.off-x1.col-lg-2(href="#")
 					+e.txt
 						| Квартиры
-						br
+						|
+						br.d-none.d-lg-block
 						| с ремонтом
-						br
+						|
+						br.d-none.d-lg-block
 						| в продаже
 				//-
 				+e.col--default.col-lg-2(href="#")
 					+e.txt Trade in
-					+e.descr
+					+e.descr.d-none.d-lg-block
 						| Обмен вашей квартиры без ремонта на нашу квартиру с ремонтом с&nbsp;доплатой
 				//-
 				+e.col--black.col-lg-2(href="#")
 					+e.txt--primary
 						| MIGFlat
-						br
+						|
+						br.d-none.d-lg-block
 						| бронирование
 					+e.descr
 						| Купить квартиру
@@ -55,35 +67,58 @@ mixin sMain(data)
 				+e.col--black.off-x1.col-lg-2.offset-lg-2.offset-xxl-0(href="#")
 					+e.txt--primary
 						| MIGFlat
-						br
+						|
+						br.d-none.d-lg-block
 						| Individual
 					+e.descr
-						| Индивидуальная работа под вашу задачу
+						| Индивидуальная работа
+						|
+						br.d-block.d-lg-none
+						| под вашу задачу
 				//-
 				+e.col--default.col-lg-2(href='#')
 					+e.txt.mb-auto
 						| Наши
-						br
+						|
+						br.d-none.d-lg-block
 						| работы
 				//-4 row
 				+e.col--footer.x2.col-lg-4
 					+mfooter()
-				+e.col--default.off-x2.col-lg-2.offset-lg-2(href='#')
+				+e.col.col-lg-2
+				+e.col.col-lg-2.d-xxl-block.d-none
+				+e.col--default.col-lg-2(href='#')
 					+e.txt.mb-auto Контакты
+				.pb-12.d-lg-none.d-block
+				+e.col.col-lg-2
 	// end sMain
 
 mixin mHeader()
 	+b.HEADER.m-header
 		+e.row.row.align-items-center
-			+e.tell-col.col
+			.col.d-lg-none
+				+b.burger
+			.col-auto.col-lg
 				+e.tell(href='tel:+74957440086') +7 495 744 00 86
-			+e.wa-col.col-auto
-				+e.wa(href="ttps://wa.me/1XXXXXXXXXX?text=Здравствуйте!%20У%20меня%20есть%20несколько%20вопросов.")
+			.col-auto
+				+e.wa(href="ttps://wa.me/+74957440086?text=Здравствуйте!%20У%20меня%20есть%20несколько%20вопросов.")
 					img(loading="lazy" src="img/svg/m-h-wa.svg" alt="")
-		+e.foot.text-sm-end
+		+e.foot.text-sm-end.d-none.d-lg-block
 			+e.location Москва, ул. Воронцовские Пруды, д.3
 			+e.mail(href='mailto:info@migflat.ru') info@migflat.ru
 			+e.call-back(href='#') Обратный звонок
+		+e.mob-foot.d-lg-none
+			+e.logo(href='#')
+				img(loading="lazy" src="img/svg/txt-logo-white.svg" alt="")
+			+e.H4.logo-name
+				| Московская
+				br
+				| инвестиционная
+				br
+				| группа
+				br
+				| квартир
+
 
 mixin mfooter()
 	+b.FOOTER.m-footer
@@ -101,10 +136,10 @@ mixin footerSoc(addClasses)
 
 mixin footerPolicy(addClasses)
 	+b.footer-policy.row.align-items-center(class=addClasses)
-		.col-auto
+		.col-lg-auto
 			+e.year
 				| ©
 				|
 				span.set-curr-year-js 2021
-		.col
+		.col-lg
 			+e.policy(href='#') Политика конфиденциальности
