@@ -65,15 +65,12 @@
 		span,
 		span:before,
 		span:after{
-			@include mt();
+			@include mt(.15s);
 			content: '';
 			position: absolute;
 			right: 0;
 			height: 1px;
 			background: $black;
-			&:hover{
-				width: 100%;
-			}
 		}
 
 		span{
@@ -87,6 +84,13 @@
 		span:after{
 			width: rem(24);
 			bottom: -8px;
+		}
+
+
+		&:hover{
+			span:after{
+				width: 100%;
+			}
 		}
 	}
 	&__wa{
@@ -122,3 +126,166 @@
 	&__{}
 	&__{}
 } // end.header
+
+.m-menu{
+	position: fixed;
+	background: $white;
+	z-index: 1001;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: calc(var(--vh, 1vh) * 100);
+	overflow-y: auto;
+
+	padding: 12px 0 19px 0;
+	@include media-breakpoint-up(sm){
+		padding: rem(20) 0;
+	}
+	@include media-breakpoint-up(lg){
+		padding: rem(30) 0;
+	}
+	@include media-breakpoint-up(xxl){
+		padding: rem(36) 0;
+	}
+
+	display: none;
+	&.active{
+		display: block;
+	}
+
+	&__bg{
+		position: absolute;
+		z-index: -1;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-end;
+
+		img{
+			width: auto;
+			height: auto;
+			max-height: calc(var(--vh, 1vh) * 100);
+			max-width: 47%;
+		}
+	}
+	&__container{
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+	}
+	&__row{
+		& > *{
+			margin-bottom: 10px;
+		}
+		margin-bottom: -10px;
+
+		padding-bottom: 42px;
+		@include media-breakpoint-up(lg){
+			padding-bottom: 10px;
+		}
+	}
+	&__logo{
+		display: block;
+		width: 235px;
+		img{
+			width: auto;
+			max-width: 100%;
+		}
+	}
+	&__cross{
+		width: rem(34);
+		height: rem(34);
+
+		position: relative;
+		&:before,
+		&:after{
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%) var(--rotate);
+			width: 100%;
+			height: 1px;
+			background: $black;
+		}
+		&:before{
+			--rotate: rotate(30deg);
+		}
+		&:after{
+			--rotate: rotate(-30deg);
+		}
+	}
+	&__menu{
+		@include media-breakpoint-up(lg){
+			margin: auto 0;
+		}
+		@include media-breakpoint-up(xxl){
+			padding-left: 14.8%;
+		}
+	}
+
+	.navMenu{
+		display: block;
+		&__item{
+			display: block;
+		}
+		&__link{
+			text-align: left;
+			padding: 0;
+
+			margin: 0 0 21px;
+			font-size: 20px;
+			letter-spacing: -0.2px;
+			@include media-breakpoint-up(sm){
+				letter-spacing: -0.33px;
+				font-size: rem(24);
+			}
+			@include media-breakpoint-up(lg){
+				margin: 0 0 rem(25);
+				font-size: rem(32);
+			}
+			@include media-breakpoint-up(xl){
+				margin: 0 0 rem(20);
+			}
+			@include media-breakpoint-up(xxl){
+				margin: 0 0 rem(41);
+			}
+
+			line-height: 1.2;
+			color: $black;
+			&:hover{
+				color: $primary;
+			}
+		}
+	}
+
+	&__foot{
+		margin-top: auto;
+
+		& > *{
+			margin-bottom: 18px;
+		}
+		margin-bottom: -18px;
+	}
+	&__location{
+		font-size: 14px;
+
+		letter-spacing: 0.04em;
+		color: $black;
+	}
+	&__mail{
+		font-size: 14px;
+		letter-spacing: 0.04em;
+		color: $primary;
+	}
+	&__call-back{
+		font-size: 14px;
+		letter-spacing: 0.04em;
+		color: $primary;
+	}
+
+}

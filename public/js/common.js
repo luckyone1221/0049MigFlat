@@ -263,7 +263,7 @@ function eventHandler() {
 	JSCCommon.animateScroll(); // JSCCommon.CustomInputFile(); 
 
 	var x = window.location.host;
-	var screenName = '02-320.png';
+	var screenName = 'menu-320.png';
 
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
@@ -320,7 +320,9 @@ function eventHandler() {
 	var header = document.querySelector(".header--js");
 
 	function calcCssVars() {
-		document.documentElement.style.setProperty('--header-w', "".concat(header.offsetWidth, "px"));
+		if (header) {
+			document.documentElement.style.setProperty('--header-w', "".concat(header.offsetWidth, "px"));
+		}
 	}
 
 	window.addEventListener('resize', calcCssVars, {
@@ -342,7 +344,14 @@ function eventHandler() {
 				spaceBetween: 64
 			}
 		}
-	})); //end luckyone js
+	})); //menu
+
+	$('.burger-js').click(function () {
+		$('.m-menu--js').fadeToggle(function () {
+			$(this).toggleClass('active');
+		});
+		$('body').toggleClass('fixed2');
+	}); //end luckyone js
 	//todo
 	//1.clean js file
 	//2.

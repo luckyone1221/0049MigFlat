@@ -464,6 +464,13 @@
 	&:before{
 		margin-bottom: 8px;
 	}
+
+	&--black{
+		&:before,
+		&:after{
+			background: $black;
+		}
+	}
 }
 
 //.m-footer

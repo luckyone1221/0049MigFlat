@@ -12,7 +12,33 @@ mixin header()
 			+e.btn-col.col-auto
 				+e.reserve-btn(href='#') MIGFlat бронирование
 			.col.col-lg-auto.order-first.order-lg-0
-				+b.burger.d-sm-none.burger-js
+				+b.burger--black.d-sm-none.burger-js
 				+e.burger.d-sm-block.d-none.burger-js
 					span
 	// end header
+
+mixin mMenu()
+	+b.m-menu--js
+		+e.bg.d-md-flex.d-none
+			img(loading="lazy" src="img/svg/big-logo.svg" alt="")
+		+e.container.container-fluid
+			+e.row.row.align-items-center
+				.col-auto.d-none.d-sm-block
+					+e.logo
+						img(loading="lazy" src="img/svg/logo-black.svg" alt="")
+				.col-auto.ms-sm-auto.align-self-xl-start
+					+e.cross.burger-js
+				.col-auto.d-sm-none.ms-auto
+					a.header__tell(href='tel:+74955555555') + 7 495 555 55 55
+				.col-auto.d-sm-none
+					a.header__wa(href="ttps://wa.me/+74957440086?text=Здравствуйте!%20У%20меня%20есть%20несколько%20вопросов.")
+						img(loading="lazy" src="img/svg/m-h-wa.svg" alt="")
+			+e.menu
+				+mnu()
+			+e.foot.row.d-sm-none
+				.col-12
+					+e.location Москва, ул. Воронцовские Пруды, д.3
+				.col-12
+					+e.mail(href='mailto:info@migflat.ru') info@migflat.ru
+				.col-12
+					+e.call-back(href='#') Обратный звонок

@@ -253,7 +253,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
-	let screenName = '02-320.png';
+	let screenName = 'menu-320.png';
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
@@ -321,7 +321,9 @@ function eventHandler() {
 	//css vars
 	let header = document.querySelector(".header--js");
 	function calcCssVars() {
-		document.documentElement.style.setProperty('--header-w', `${header.offsetWidth}px`);
+		if(header){
+			document.documentElement.style.setProperty('--header-w', `${header.offsetWidth}px`);
+		}
 	}
 
 	window.addEventListener('resize', calcCssVars, { passive: true });
@@ -342,6 +344,15 @@ function eventHandler() {
 				spaceBetween: 64,
 			},
 		},
+	});
+
+	//menu
+	$('.burger-js').click(function (){
+		$('.m-menu--js').fadeToggle(function (){
+			$(this).toggleClass('active');
+		});
+
+		$('body').toggleClass('fixed2');
 	});
 
 	//end luckyone js
