@@ -253,7 +253,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
-	let screenName = 'menu-320.png';
+	let screenName = '05-320.png';
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
@@ -331,7 +331,6 @@ function eventHandler() {
 	calcCssVars();
 	//sCompleated
 	let sCompleatedSlider = new Swiper('.sCompleated-slider-js', {
-		...defaultSl,
 		slidesPerView: 'auto',
 		breakpoints: {
 			0:{
@@ -353,6 +352,21 @@ function eventHandler() {
 		});
 
 		$('body').toggleClass('fixed2');
+	});
+	//sTeam
+	let sTeamSlider = new Swiper('.sTeam-slider-js', {
+		slidesPerView: 'auto',
+		breakpoints: {
+			0:{
+				spaceBetween: 16,
+			},
+			992:{
+				spaceBetween: 40,
+			},
+			1800:{
+				spaceBetween: 64,
+			},
+		},
 	});
 
 	//end luckyone js

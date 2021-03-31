@@ -1,0 +1,150 @@
+// start .sTeam
+.sTeam {
+	flex-grow: 1;
+
+	--sTPB: 16px;
+	--sPB: 30px;
+	@include media-breakpoint-up(sm){
+		--sTPB: 30px;
+		--sPB: 30px;
+	}
+	@include media-breakpoint-up(xxl){
+		--sTPB: 45px;
+	}
+
+	display: flex;
+	flex-direction: column;
+
+	&__descr{
+		color: $black;
+
+		letter-spacing: -0.25px;
+		margin-bottom: 40px;
+		font-size: 18px;
+		margin-right: -5px;
+		line-height: 1.25;
+		@include media-breakpoint-up(sm){
+			font-size: rem(20);
+			letter-spacing: -0.25px;
+			margin-bottom: 50px;
+			margin-right: 0;
+			line-height: 1.2;
+		}
+
+		@include media-breakpoint-up(xxl){
+			font-size: rem(24);
+			max-width: 1400px;
+			margin-bottom: 84px;
+		}
+	}
+	&__slider-wrap{
+
+		.swiper-container{
+			overflow: visible!important;
+		}
+		.swiper-wrapper{
+
+		}
+		.swiper-slide{
+			&:nth-child(even){
+				--box-bg: #{$light};
+			}
+			&:nth-child(odd){
+				--box-bg: #{$light-skinny};
+				@include media-breakpoint-up(xl){
+					padding-top: 20px;
+				}
+				@include media-breakpoint-up(xxl){
+					padding-top: 42px;
+				}
+			}
+
+			width: 248px;
+			@include media-breakpoint-up(md){
+				width: calc((100% / 2) * (16px * 1 / 2));
+			}
+			@include media-breakpoint-up(lg){
+				width: 320px;
+			}
+			@include media-breakpoint-up(xxl){
+				width: 480px;
+			}
+		}
+	}
+	&__box{
+		background-color: var(--box-bg, #{$light-skinny});
+		padding-top: 100%;
+
+		display: block;
+		width: 100%;
+		height: 0;
+		position: relative;
+
+		margin-bottom: 16px;
+		@include media-breakpoint-up(sm){
+			margin-bottom: 20px;
+		}
+		@include media-breakpoint-up(xxl){
+			margin-bottom: 26px;
+		}
+	}
+	&__img{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		@include media-breakpoint-up(xxl){
+			height: auto;
+		}
+
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+
+		img{
+			width: auto;
+			height: auto;
+
+			max-width: 90%;
+			max-height: 110%;
+			@include media-breakpoint-up(sm){
+				max-width: 80%;
+				max-height: 110%;
+			}
+			@include media-breakpoint-up(xxl){
+				max-width: 90%;
+				max-height: 120%;
+			}
+		}
+
+		padding-right: 10px;
+		@include media-breakpoint-up(sm){
+			padding-right: 0;
+		}
+		@include media-breakpoint-up(xxl){
+			padding-right: 21px;
+		}
+	}
+	&__name{
+		color: $black;
+
+		margin-bottom: 7px;
+		font-size: 20px;
+		@include media-breakpoint-up(sm){
+			margin-bottom: 16px;
+			font-size: rem(24);
+		}
+		@include media-breakpoint-up(xxl){
+			margin-bottom: rem(22);
+		}
+	}
+	&__duty{
+		letter-spacing: -0.2px;
+		@include media-breakpoint-up(sm){
+			letter-spacing: normal;
+		}
+	}
+	&__{}
+	&__{}
+} // end.sTeam

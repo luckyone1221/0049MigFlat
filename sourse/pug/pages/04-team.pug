@@ -1,0 +1,21 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sMain/_sMain.pug
+include ../blocks/sTeam/_sTeam.pug
+include ../blocks/sCompleated/_sCompleated.pug
+
+block variables
+	- let  mainPage= null 
+	- let  bg= null
+
+block title
+	- let  title= '04-team'
+	title= title
+block pagecontent
+	+mMenu()
+	+header()
+	+sTeam()
+	+footer()

@@ -263,7 +263,7 @@ function eventHandler() {
 	JSCCommon.animateScroll(); // JSCCommon.CustomInputFile(); 
 
 	var x = window.location.host;
-	var screenName = 'menu-320.png';
+	var screenName = '05-320.png';
 
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
@@ -333,7 +333,7 @@ function eventHandler() {
 	});
 	calcCssVars(); //sCompleated
 
-	var sCompleatedSlider = new Swiper('.sCompleated-slider-js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+	var sCompleatedSlider = new Swiper('.sCompleated-slider-js', {
 		slidesPerView: 'auto',
 		breakpoints: {
 			0: {},
@@ -344,13 +344,28 @@ function eventHandler() {
 				spaceBetween: 64
 			}
 		}
-	})); //menu
+	}); //menu
 
 	$('.burger-js').click(function () {
 		$('.m-menu--js').fadeToggle(function () {
 			$(this).toggleClass('active');
 		});
 		$('body').toggleClass('fixed2');
+	}); //sTeam
+
+	var sTeamSlider = new Swiper('.sTeam-slider-js', {
+		slidesPerView: 'auto',
+		breakpoints: {
+			0: {
+				spaceBetween: 16
+			},
+			992: {
+				spaceBetween: 40
+			},
+			1800: {
+				spaceBetween: 64
+			}
+		}
 	}); //end luckyone js
 	//todo
 	//1.clean js file

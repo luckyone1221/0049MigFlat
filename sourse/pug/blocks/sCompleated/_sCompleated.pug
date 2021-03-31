@@ -3,10 +3,13 @@ mixin sCompleated(data)
 	+b.SECTION.sCompleated.section#sCompleated&attributes(attributes)
 		+e.container.container-fluid
 			+sTitle()
-				| Выполненные
-				|
-				br.d-sm-none
-				| работы
+				if block
+					block
+				else
+					| Выполненные
+					|
+					br.d-sm-none
+					| работы
 			+e.slider-wrap
 				.swiper-container.sCompleated-slider-js
 					.swiper-wrapper

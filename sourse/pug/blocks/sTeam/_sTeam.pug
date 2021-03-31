@@ -1,0 +1,25 @@
+mixin sTeam(data)
+	// start sTeam
+	+b.SECTION.sTeam.section#sTeam&attributes(attributes)
+		+e.container.container-fluid
+			+sTitle('Команда')
+			+e.descr Наш продукт под контролем на всех этапах от выбора застройщика и квартиры в инвестиционно-привлекательном жилом комплексе до передачи вам ключей от квартиры с готовым ремонтом
+			+e.slider-wrap
+				.swiper-container.sTeam-slider-js
+					.swiper-wrapper
+						+teamSlider(1, 'Анна', 'Руководитель компании')
+						+teamSlider(2, 'Константин', 'Специалист по недвижимости')
+						+teamSlider(3, 'Марина', 'Юрист')
+						+teamSlider(4, 'Николай', 'Руководитель проектов')
+						+teamSlider(5, 'Николай', 'Архитектор-дизайнер')
+						+teamSlider(6, 'Алексей', 'Директор строительной организации')
+						+teamSlider(7, 'Ольга ', 'Финансист')
+	// end sTeam
+
+mixin teamSlider(imgNum, name, duty)
+	.swiper-slide
+		+e.box
+			+e.img
+				img(loading="lazy" src=`img/@2x/team-member-${imgNum}.png` alt="")
+		+e.name=name
+		+e.duty=duty

@@ -1,0 +1,37 @@
+mixin sTradeIn(data)
+	// start sTradeIn
+	+b.SECTION.sTradeIn.section#sTradeIn&attributes(attributes)
+		+e.side-bg
+			img(loading="lazy" src="img/@2x/side-bg.png" alt="")
+		+e.container.container-fluid
+			+sTitle('Trade in')
+			+e.descr Мы готовы предложить вам квартиру с готовым ремонтом в новом жилом комплексе в престижных районах Москвы в обмен на аналогичную квартиру без отделки на специальных условиях с доплатой.
+			+e.sub-title Когда это удобно?
+			+e.title-sm это удобно, ЕСЛИ ВЫ ПОНЯЛИ, ЧТО У ВАС НЕТ СИЛ, ВРЕМЕНИ ИЛИ ЖЕЛАНИЯ НА:
+			+e.list
+				li поиски дизайнера
+				li разработку проектной документации,
+				li поиски надёжной строительной бригады, которая не подведёт по срокам и не превысит первоначальный бюджет по ремонту,
+				li на контроль качества выполняемых работ
+				li на закупку материалов, сантехники, света
+				li на согласование отдельных частей проекта с управляющими компаниями многоквартирного дома и т.д.
+			+e.baner
+				+e.b-row.row
+					.col-lg
+						+e.b-txt
+							| Воспользуйтесь нашим сервисом
+							|
+							br.d-sm-none
+							| trade in и переложите вышеуказанные
+							|
+							br.d-sm-none
+							| заботы на наши плечи
+					.col-lg-auto
+						+e.b-link(href='#')
+							+e.bl-txt
+								| MIGFlat
+								br
+								| Trade in
+							+e.b-img
+								img(loading="lazy" src="img/svg/arrow-r-circle.svg" alt="")
+	// end sTradeIn
