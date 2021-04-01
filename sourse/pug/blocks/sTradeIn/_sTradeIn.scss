@@ -24,7 +24,7 @@
 		right: 0;
 
 		width: 150px;
-		bottom: 150px;
+		bottom: 220px;
 		@include media-breakpoint-up(sm){
 			width: 20%;
 			bottom: 150px;
@@ -105,66 +105,50 @@
 		}
 	}
 	&__list{
-		list-style: none;
-		margin: 0;
-
+		@extend .checked-list;
 		padding: 0 0 66px;
 		@include media-breakpoint-up(sm){
 			padding: 0 0 rem(54px);
 		}
-		li{
-			position: relative;
-
-			line-height: 1.25;
-			padding: 0 0 16px rem(34px);
-			@include media-breakpoint-up(sm){
-				line-height: 1.2;
-				padding: 0 0 rem(16px) rem(32px);
-			}
-
-			letter-spacing: 0.5px;
-
-			&:before{
-				content: '';
-				position: absolute;
-				top: 0px;
-				left: 0;
-				width: 16px;
-				height: 16px;
-
-				background-image: url(../img/svg/check-circle.svg);
-				background-repeat: no-repeat;
-				background-size: cover;
-				background-position: center;
-			}
-
-			color: $body-color;
-
-			&:last-child{
-				padding-bottom: 0;
-			}
-		}
 	}
-	&__baner{
-		background-color: $primary;
-		color: $white;
+	&__{}
+	&__{}
+} // end.sTradeIn
 
-		padding: 13px 16px 16px;
-		@include media-breakpoint-up(sm){
-			padding: rem(30);
-		}
-		@include media-breakpoint-up(lg){
-			padding: rem(45) rem(40);
-		}
+.baner{
+	@include media-breakpoint-down(lg){
+		min-height: 280px;
+		display: flex;
+		flex-direction: column;
+	}
+	background-color: $primary;
+	color: $white;
+
+	padding: 13px 16px 16px;
+	@include media-breakpoint-up(sm){
+		padding: rem(30);
+	}
+	@include media-breakpoint-up(lg){
+		padding: rem(45) rem(40);
+	}
+	@include media-breakpoint-up(xxl){
+		padding: 57px 57px 57px 63px;
+	}
+	&--alt{
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: center;
 		@include media-breakpoint-up(xxl){
-			padding: 57px 57px 57px 63px;
+			min-height: 232px;
+			padding: 30px 57px 30px 63px;
 		}
 	}
+
 	&__b-row{
-		& > *{
-			margin-bottom: 20px;
+		--col-mb: 20px;
+		@include media-breakpoint-down(lg){
+			flex-grow: 1;
 		}
-		margin-bottom: -20px;
 	}
 	&__b-txt{
 		@include media-breakpoint-up(lg){
@@ -174,6 +158,12 @@
 			max-width: 590px;
 		}
 
+		&--alt{
+			@include media-breakpoint-up(xxl){
+				max-width: 640px;
+			}
+		}
+
 		font-size: 20px;
 		letter-spacing: -0.23px;
 		@include media-breakpoint-up(sm) {
@@ -181,10 +171,6 @@
 			letter-spacing: -0.33px;
 		}
 
-		margin-bottom: 39px;
-		@include media-breakpoint-up(sm){
-			margin-bottom: 30px;
-		}
 		@include media-breakpoint-up(lg){
 			margin-bottom: 0;
 		}
@@ -196,6 +182,7 @@
 		line-height: 1.2;
 		color: $white;
 	}
+
 	&__b-link{
 		color: $primary;
 		background-color: $black;
@@ -207,6 +194,10 @@
 		padding: 16px;
 		@include media-breakpoint-up(sm){
 			padding: rem(31) rem(30);
+		}
+
+		@include media-breakpoint-up(xxl){
+			min-width: rem(310);
 		}
 	}
 	&__bl-txt{
@@ -227,13 +218,7 @@
 			width: rem(54);
 			height: rem(54);
 		}
-
-		@include media-breakpoint-up(lg){
-			margin-left: 30px;
-		}
-		@include media-breakpoint-up(xxl){
-			margin-left: 105px;
-		}
+		margin-left: 30px;
 
 		display: flex;
 		align-items: center;
@@ -246,6 +231,4 @@
 			max-height: 100%;
 		}
 	}
-	&__{}
-	&__{}
-} // end.sTradeIn
+}

@@ -525,3 +525,47 @@ a{
 .burger-js{
 	cursor: pointer;
 }
+
+.row{
+	& > *{
+		margin-bottom: var(--col-mb, 0px);
+	}
+	margin-bottom: calc(var(--col-mb, 0px) * -1);
+}
+//
+.checked-list{
+	list-style: none;
+	margin: 0;
+	li{
+		position: relative;
+
+		line-height: 1.25;
+		padding: 0 0 16px rem(34px);
+		@include media-breakpoint-up(sm){
+			line-height: 1.2;
+			padding: 0 0 rem(16px) rem(32px);
+		}
+
+		letter-spacing: 0.5px;
+
+		&:before{
+			content: '';
+			position: absolute;
+			top: 0px;
+			left: 0;
+			width: 16px;
+			height: 16px;
+
+			background-image: url(../img/svg/check-circle.svg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+		}
+
+		color: $body-color;
+
+		&:last-child{
+			padding-bottom: 0;
+		}
+	}
+}

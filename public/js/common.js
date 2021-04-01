@@ -251,8 +251,6 @@ var JSCCommon = {
 var $ = jQuery;
 
 function eventHandler() {
-	var _defaultSl;
-
 	JSCCommon.ifie();
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('.tabs--js');
@@ -263,7 +261,7 @@ function eventHandler() {
 	JSCCommon.animateScroll(); // JSCCommon.CustomInputFile(); 
 
 	var x = window.location.host;
-	var screenName = '05-320.png';
+	var screenName = '010.png';
 
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
@@ -285,23 +283,27 @@ function eventHandler() {
 		passive: true
 	});
 	whenResize();
-	var defaultSl = (_defaultSl = {
-		spaceBetween: 0,
+	var defaultSl = {
 		lazy: {
-			loadPrevNext: true
-		},
-		watchOverflow: true
-	}, _defineProperty(_defaultSl, "spaceBetween", 0), _defineProperty(_defaultSl, "loop", true), _defineProperty(_defaultSl, "navigation", {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
-	}), _defineProperty(_defaultSl, "pagination", {
-		el: ' .swiper-pagination',
-		type: 'bullets',
-		clickable: true // renderBullet: function (index, className) {
-		// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-		// }
+			loadPrevNext: true,
+			loadPrevNextAmount: 15
+		} // watchOverflow: true,
+		// spaceBetween: 0,
+		// loop: true,
+		// navigation: {
+		// 	nextEl: '.swiper-button-next',
+		// 	prevEl: '.swiper-button-prev',
+		// },
+		// pagination: {
+		// 	el: ' .swiper-pagination',
+		// 	type: 'bullets',
+		// 	clickable: true,
+		// 	// renderBullet: function (index, className) {
+		// 	// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+		// 	// }
+		// },
 
-	}), _defaultSl);
+	};
 	var swiper4 = new Swiper('.sBanners__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
 		slidesPerView: 'auto',
 		freeMode: true,
@@ -334,9 +336,12 @@ function eventHandler() {
 	calcCssVars(); //sCompleated
 
 	var sCompleatedSlider = new Swiper('.sCompleated-slider-js', {
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 15
+		},
 		slidesPerView: 'auto',
 		breakpoints: {
-			0: {},
 			992: {
 				spaceBetween: 40
 			},
@@ -354,6 +359,70 @@ function eventHandler() {
 	}); //sTeam
 
 	var sTeamSlider = new Swiper('.sTeam-slider-js', {
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 5
+		},
+		slidesPerView: 'auto',
+		breakpoints: {
+			0: {
+				spaceBetween: 16
+			},
+			992: {
+				spaceBetween: 40
+			},
+			1800: {
+				spaceBetween: 64
+			}
+		}
+	}); //yandex lazy
+
+	if ($('body').hasClass('contact-page')) {
+		window.setTimeout(function () {
+			var yandexScript = document.createElement('script');
+			yandexScript.setAttribute('src', 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=e27e46e9-4530-4518-b27a-3bba6a08eeff');
+			yandexScript.setAttribute('type', 'text/javascript');
+			document.body.appendChild(yandexScript);
+			window.setTimeout(function () {
+				try {
+					ymaps.ready(function () {
+						var myMap = new ymaps.Map('map', {
+							center: [55.664096, 37.536517],
+							zoom: 16
+						}, {
+							searchControlProvider: 'yandex#search'
+						}),
+								// Создаём макет содержимого.
+						MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+								myPlacemark = new ymaps.Placemark([55.664096, 37.536517], {
+							hintContent: 'Наш офис',
+							balloonContent: 'ул. Воронцовские Пруды д. 3, подъезд 8'
+						}, {
+							// Опции.
+							// Необходимо указать данный тип макета.
+							iconLayout: 'default#image',
+							// Своё изображение иконки метки.
+							iconImageHref: 'img/svg/map-mark.svg',
+							// Размеры метки.
+							iconImageSize: [48, 48],
+							// Смещение левого верхнего угла иконки относительно
+							// её "ножки" (точки привязки).
+							//iconImageOffset: [-24, -48]
+							iconImageOffset: [-1, -1]
+						});
+						myMap.geoObjects.add(myPlacemark);
+						myMap.behaviors.disable('scrollZoom');
+					});
+				} catch (_unused) {}
+			}, 1000);
+		}, 2000);
+	}
+
+	var sCertificatsSlider = new Swiper('.sCertificats-slider-js', {
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 5
+		},
 		slidesPerView: 'auto',
 		breakpoints: {
 			0: {

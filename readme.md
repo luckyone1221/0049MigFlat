@@ -4,3 +4,8 @@
 1. <https://luckyone1221.github.io/0049MigFlat/public/03-repaired.html>
 1. <https://luckyone1221.github.io/0049MigFlat/public/04-team.html>
 1. <https://luckyone1221.github.io/0049MigFlat/public/05-trade-in.html>
+1. <https://luckyone1221.github.io/0049MigFlat/public/06-contacts.html>
+1. <https://luckyone1221.github.io/0049MigFlat/public/07-policy.html>
+1. <https://luckyone1221.github.io/0049MigFlat/public/08-armor.html>
+1. <https://luckyone1221.github.io/0049MigFlat/public/09-individual.html>
+1. <https://luckyone1221.github.io/0049MigFlat/public/010-about.html>

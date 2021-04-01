@@ -15,23 +15,32 @@ mixin sTradeIn(data)
 				li на контроль качества выполняемых работ
 				li на закупку материалов, сантехники, света
 				li на согласование отдельных частей проекта с управляющими компаниями многоквартирного дома и т.д.
-			+e.baner
-				+e.b-row.row
-					.col-lg
-						+e.b-txt
-							| Воспользуйтесь нашим сервисом
-							|
-							br.d-sm-none
-							| trade in и переложите вышеуказанные
-							|
-							br.d-sm-none
-							| заботы на наши плечи
-					.col-lg-auto
-						+e.b-link(href='#')
-							+e.bl-txt
-								| MIGFlat
-								br
-								| Trade in
-							+e.b-img
-								img(loading="lazy" src="img/svg/arrow-r-circle.svg" alt="")
+			+baner()
 	// end sTradeIn
+
+mixin baner(blTxt)
+	+b.baner&attributes(attributes)
+		+e.b-row.row.align-items-center
+			.col-lg
+				if block
+					block
+				else
+					+e.b-txt
+						| Воспользуйтесь нашим сервисом
+						|
+						br.d-sm-none
+						| trade in и переложите вышеуказанные
+						|
+						br.d-sm-none
+						| заботы на наши плечи
+			.col-lg-auto
+				+e.b-link(href='#')
+					+e.bl-txt
+						| MIGFlat
+						br
+						if blTxt
+							span=blTxt
+						else
+							span Trade in
+					+e.b-img
+						img(loading="lazy" src="img/svg/arrow-r-circle.svg" alt="")

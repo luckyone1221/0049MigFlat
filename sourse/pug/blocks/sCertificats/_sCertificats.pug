@@ -1,0 +1,22 @@
+mixin sCertificats(data)
+	// start sCertificats
+	+b.SECTION.sCertificats.section#sCertificats&attributes(attributes)
+		+e.container.container-fluid
+			+e.section-title
+				h2 Сертификаты
+			+e.slider-wrap
+				.swiper-container.sCertificats-slider-js
+					.swiper-wrapper
+						+cetificatSlide('1.jpg')
+						+cetificatSlide('2.png')
+						+cetificatSlide('3.png')
+	// end sCertificats
+
+mixin cetificatSlide(imgNum)
+	.swiper-slide
+		+e.box
+			+e.img-cont(href='#')
+				img.swiper-lazy(src='' data-src=`img/@2x/cert-${imgNum}`  alt="")
+			+e.scale-link(href='#') Увеличить
+
+

@@ -253,7 +253,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
-	let screenName = '05-320.png';
+	let screenName = '010.png';
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
@@ -278,25 +278,25 @@ function eventHandler() {
 
 
 	let defaultSl = {
-		spaceBetween: 0,
 		lazy: {
 			loadPrevNext: true,
+			loadPrevNextAmount: 15,
 		},
-		watchOverflow: true,
-		spaceBetween: 0,
-		loop: true,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-		pagination: {
-			el: ' .swiper-pagination',
-			type: 'bullets',
-			clickable: true,
-			// renderBullet: function (index, className) {
-			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-			// }
-		},
+		// watchOverflow: true,
+		// spaceBetween: 0,
+		// loop: true,
+		// navigation: {
+		// 	nextEl: '.swiper-button-next',
+		// 	prevEl: '.swiper-button-prev',
+		// },
+		// pagination: {
+		// 	el: ' .swiper-pagination',
+		// 	type: 'bullets',
+		// 	clickable: true,
+		// 	// renderBullet: function (index, className) {
+		// 	// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+		// 	// }
+		// },
 	}
 
 	const swiper4 = new Swiper('.sBanners__slider--js', {
@@ -331,11 +331,12 @@ function eventHandler() {
 	calcCssVars();
 	//sCompleated
 	let sCompleatedSlider = new Swiper('.sCompleated-slider-js', {
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 15,
+		},
 		slidesPerView: 'auto',
 		breakpoints: {
-			0:{
-
-			},
 			992:{
 				spaceBetween: 40,
 			},
@@ -355,6 +356,81 @@ function eventHandler() {
 	});
 	//sTeam
 	let sTeamSlider = new Swiper('.sTeam-slider-js', {
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 5,
+		},
+		slidesPerView: 'auto',
+		breakpoints: {
+			0:{
+				spaceBetween: 16,
+			},
+			992:{
+				spaceBetween: 40,
+			},
+			1800:{
+				spaceBetween: 64,
+			},
+		},
+	});
+	//yandex lazy
+	if ($('body').hasClass('contact-page')){
+		window.setTimeout(function (){
+			let yandexScript = document.createElement('script');
+			yandexScript.setAttribute('src', 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=e27e46e9-4530-4518-b27a-3bba6a08eeff');
+			yandexScript.setAttribute('type', 'text/javascript');
+
+			document.body.appendChild(yandexScript);
+			window.setTimeout(function (){
+				try {
+					ymaps.ready(function () {
+						var myMap = new ymaps.Map('map', {
+								center: [55.664096, 37.536517],
+								zoom: 16
+							}, {
+								searchControlProvider: 'yandex#search'
+							}),
+
+							// Создаём макет содержимого.
+							MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+								'<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+							),
+
+							myPlacemark = new ymaps.Placemark([55.664096, 37.536517], {
+								hintContent: 'Наш офис',
+								balloonContent: 'ул. Воронцовские Пруды д. 3, подъезд 8'
+							}, {
+								// Опции.
+								// Необходимо указать данный тип макета.
+								iconLayout: 'default#image',
+								// Своё изображение иконки метки.
+								iconImageHref: 'img/svg/map-mark.svg',
+								// Размеры метки.
+								iconImageSize: [48, 48],
+								// Смещение левого верхнего угла иконки относительно
+								// её "ножки" (точки привязки).
+								//iconImageOffset: [-24, -48]
+								iconImageOffset: [-1, -1]
+							});
+
+						myMap.geoObjects
+							.add(myPlacemark);
+
+						myMap.behaviors.disable('scrollZoom');
+					});
+				}
+				catch {
+
+				}
+			}, 1000);
+
+		}, 2000);
+	}
+	let sCertificatsSlider = new Swiper('.sCertificats-slider-js', {
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 5,
+		},
 		slidesPerView: 'auto',
 		breakpoints: {
 			0:{

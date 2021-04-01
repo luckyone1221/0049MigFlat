@@ -1,9 +1,58 @@
 mixin sContact()
 	// start sContact
 	+b.SECTION.sContact.section#sContact&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 sContact
-				
-			.row
+		+e.container.container-fluid
+			+sTitle('Контакты')
+			+e.main-row.row
+				+e.content-col.col-xl-auto
+					+e.contact-data
+						+contactsRow('Телефон:')
+							+e.tell-row.row
+								.col-auto
+									+e.link(href='tel:+74957440086') +7 495 744 00 86
+								.col-auto.d-none.d-lg-block
+									+e.wa(href="ttps://wa.me/+74957440086?text=Здравствуйте!%20У%20меня%20есть%20несколько%20вопросов.")
+										img(loading="lazy" src="img/svg/m-h-wa.svg" alt="")
+						+contactsRow('E-mail')
+							+e.link(href='mailto:info@migflat.ru') info@migflat.ru
+						+contactsRow('Офис:')
+							+e.link--address
+								span.mb-sm-2.d-block 117630, г. Москва,
+								| ул. Воронцовские Пруды д. 3, подъезд 8
+						//-
+						+e.row.row
+							+e.name-col--soc.col-auto Соц.сети:
+							.col
+								+footerSoc()
+					+form-wrap()
+						+e.title
+							| Остались вопросы?
+							|
+							br.d-sm-none
+							| Задайте их нам
+						+e.row.row
+							.col-md-6
+								+input('Ваше имя','text',undefined,'name')
+							.col-md-6
+								+input('Ваш номер телефона или e-mail','text',undefined,'mail-or-tel')
+							.col-md-12
+								+input('Ваш вопрос','textarea',undefined,'message')
+						+e.BUTTON.btn(type='submit') Отправить
+						+e.policy
+							| Отправляя формуя принимаю условия
+							|
+							a(href='#') Политики конфиденциальности
+					//
+				+e.map-col.col-xl
+					+e.map-cont
+						#map(style="width: 100%!important; height: 100%!important;")
+						+e.fall-back
+							img(loading="lazy" src='img/@2x/map-fallback.png' alt="")
+
 	// end sContact
+
+mixin contactsRow(name)
+	+e.row.row
+		+e.name-col.col-md-auto=name
+		.col-md
+			block

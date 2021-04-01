@@ -122,7 +122,7 @@
 
 .section-title{
 	@include media-breakpoint-up(lg){
-		max-width: calc(100% - var(--header-w));
+		max-width: calc(100vw - var(--header-w) - (var(--cont-x-padd) * 2));
 	}
 	&__row{
 		@include roww(17px);

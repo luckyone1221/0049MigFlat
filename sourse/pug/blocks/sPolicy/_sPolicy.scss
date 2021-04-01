@@ -1,0 +1,76 @@
+// start .sPolicy
+.sPolicy {
+	--sTPB: 20px;
+	--sPB: 30px;
+	@include media-breakpoint-up(sm){
+		--sTPB: 30px;
+		--sPB: 30px;
+	}
+	@include media-breakpoint-up(xxl){
+		--sTPB: 45px;
+	}
+
+	position: relative;
+	z-index: 1;
+	&__side-bg{
+		position: absolute;
+		z-index: -1;
+		right: 0;
+
+		width: 150px;
+		bottom: 150px;
+		@include media-breakpoint-up(sm){
+			width: 20%;
+			bottom: 150px;
+		}
+		@include media-breakpoint-up(xl){
+			width: 25%;
+			bottom: 23.5px;
+		}
+		@include media-breakpoint-up(base){
+			width: 655px;
+			bottom: 23.5px;
+		}
+		height: auto;
+		max-height: 90%;
+
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+
+		img{
+			width: auto;
+			height: auto;
+			max-height: 100%;
+			max-width: 100%;
+		}
+	}
+	&__container{
+		margin-left: 0;
+		@include media-breakpoint-up(xl){
+			max-width: calc(70% + var(--cont-x-padd, 20px));
+		}
+		@include media-breakpoint-up(xxl){
+			max-width: calc(1336px + var(--cont-x-padd, 20px));
+		}
+	}
+	&__content{
+		p{
+			margin-bottom: 0;
+		}
+		h4{
+			color: $black;
+
+			margin-bottom: 30px;
+			font-size: 18px;
+			@include media-breakpoint-up(sm){
+				margin-bottom: 30px;
+				font-size: rem(24px);
+			}
+		}
+
+	}
+
+	&__{}
+	&__{}
+} // end.sPolicy

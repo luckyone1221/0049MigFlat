@@ -1,29 +1,267 @@
+// start .sContact
+.sContact {
+	flex-grow: 1;
 
-	// start .sContact
-	.sContact {
-		 
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-up(xs) {}
-	
-	//
-	@include media-breakpoint-between(md, xl) { }
-	
-	
-	//
-	@include media-breakpoint-only(xs) {}
-	@include media-breakpoint-only(sm) {}
-	@include media-breakpoint-only(md) {}
-	@include media-breakpoint-only(lg) {}
-	@include media-breakpoint-only(xl) {}
-	
-	//
-	@include media-breakpoint-down(xl) {}
-	@include media-breakpoint-down(lg) {}
-	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
+	--sTPB: 35px;
+	--sPB: 0;
+	@include media-breakpoint-up(sm){
+		--sTPB: 35px;
+		--sPB: 30px;
+	}
+	@include media-breakpoint-up(xxl){
+		--sTPB: 90px;
+	}
 
+	//display: flex;
+	//flex-direction: column;
+	&__container{
+		@include media-breakpoint-up(xxl){
+			padding-right: 0;
+		}
+	}
+	&__main-row{
+		@include media-breakpoint-up(xxl){
+			@include roww(64px);
+		}
+
+		--col-mb: 25px;
+	}
+	&__content-col{
+		@include media-breakpoint-up(base){
+			min-width: 816px;
+		}
+	}
+	&__map-col{
+		height: 328px;
+		@include media-breakpoint-up(sm){
+			height: 400px;
+		}
+		@include media-breakpoint-down(xl){
+			position: relative;
+			padding: 0;
+			width: 100vw;
+			max-width: 100vw;
+			left: calc(-1 * (100vw - 100%) / 2);
+		}
+		@include media-breakpoint-up(xl){
+			height: auto;
+		}
+		@include media-breakpoint-up(xxl){
+			padding-right: 0;
+		}
+	}
+	&__contact-data{
+		padding-bottom: 10px;
+		@include media-breakpoint-up(sm){
+			padding-bottom: rem(20);
+		}
+		@include media-breakpoint-up(xxl){
+			padding-bottom: 79px;
+		}
+	}
+	//
+	&__row{
+		& > *{
+			margin-bottom: 4px;
+		}
+		margin-bottom: -4px;
+
+		padding-bottom: 16px;
+		@include media-breakpoint-up(sm){
+			padding-bottom: rem(24);
+		}
+
+		align-items: center;
+		@include media-breakpoint-up(md){
+			align-items: flex-start;
+		}
+		@include media-breakpoint-up(xxl){
+			padding-bottom: rem(32);
+		}
+	}
+	&__name-col{
+		width: 100%;
+		@include media-breakpoint-up(lg){
+			width: 120px;
+		}
+		@include media-breakpoint-up(xxl){
+			width: 164px;
+		}
+
+		font-weight: bold;
+		letter-spacing: 0.04em;
+
+		&--soc{
+			width: 95px;
+		}
+	}
+	//tell-row
+	&__tell-row{
+		@include roww(21px);
+		& > *{
+			margin-bottom: 5px;
+		}
+		margin-bottom: -5px;
+	}
+	&__link{
+		display: block;
+
+		font-size: 16px;
+		@include media-breakpoint-up(sm){
+			font-size: rem(20);
+		}
+
+		letter-spacing: 0.04em;
+		color: $black;
+		&:hover{
+			color: $primary;
+		}
+
+		&--address{
+			padding-bottom: 5px;
+			@include media-breakpoint-up(sm){
+				padding-bottom: 0px;
+			}
+			@include media-breakpoint-up(xxl){
+				padding-bottom: 10px;
+			}
+			&:hover{
+				color: $black;
+			}
+
+			.city{
+				margin-bottom: 8px;
+			}
+		}
+	}
+	&__wa{
+		width: rem(24px);
+		height: rem(24px);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		img{
+			width: auto;
+			height: auto;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+	//
+	.footer-soc{}
+	.form-wrap{
+		&__title{
+			font-size: 18px;
+			margin-bottom: 16px;
+			letter-spacing: -0.2px;
+			@include media-breakpoint-up(sm){
+				font-size: rem(24);
+				margin-bottom: rem(15);
+				letter-spacing: -0.3px;
+			}
+			@include media-breakpoint-up(xxl){
+				font-size: rem(32);
+				margin-bottom: 27px;
+			}
+		}
+		&__row{
+			--col-mb: 12px;
+			padding-bottom: 24px;
+			@include media-breakpoint-up(sm){
+				padding-bottom: rem(30);
+			}
+			@include media-breakpoint-up(xxl){
+				@include roww(42px);
+				--col-mb: 15px;
+				padding-bottom: rem(45);
+			}
+		}
+		&__input-wrap{
+			input, textarea{
+				border-top: none;
+				border-right: none;
+				border-left: none;
+
+				border-bottom: 2px solid;
+				letter-spacing: 0.5px;
+
+				@include media-breakpoint-down(sm){
+					padding: 16.5px 0;
+				}
+			}
+
+			textarea{
+				height: 90px;
+				@include media-breakpoint-up(sm){
+					height: 100px;
+				}
+			}
+		}
+		&__input{
+
+		}
+		&__input-title{}
+		&__btn{
+			@extend .btn;
+			@extend .btn-primary;
+
+			min-width: 100%;
+			margin-bottom: 20px;
+			padding: 9px 20px;
+			font-size: 18px;
+			@include media-breakpoint-up(sm){
+				min-width: 232px;
+				margin-bottom: rem(30);
+				padding: 15.5px 20px;
+				font-size: rem(20px);
+			}
+		}
+		&__policy{
+			color: $black;
+
+			font-size: 12px;
+			line-height: (14/12);
+
+			letter-spacing: 0.3px;
+			@include media-breakpoint-up(sm){
+				letter-spacing: 0.3px;
+			}
+			a{
+				color: $black;
+				&:hover{
+					color: $primary;
+				}
+			}
+		}
+		&__{}
+		&__{}
+	}
+	&__map-cont{
+		width: 100%;
+		height: 100%;
+		position: relative;
+		z-index: 1;
+
+		#map{
+
+		}
+	}
+	&__fall-back{
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__{}
+	&__{}
 } // end.sContact

@@ -1,0 +1,59 @@
+// start .sReady
+.sReady {
+	--sPT: 20px;
+	--sPB: 20px;
+	--sTPB: 25px;
+	@include media-breakpoint-up(xxl){
+		--sPT: 26px;
+		--sPB: 25px;
+		--sTPB: 43px;
+	}
+
+	&__section-title{
+		padding-bottom: var(--sTPB, 30px);
+		h2{
+			font-size: 18px;
+			letter-spacing: -0.2px;
+			@include media-breakpoint-up(sm){
+				font-size: rem(24px);
+				letter-spacing: -0.3px;
+			}
+			@include media-breakpoint-up(xxl){
+				font-size: rem(32px);
+			}
+		}
+	}
+
+	.pic-txt{
+		padding-bottom: 0px;
+
+		&__row{
+			&:nth-child(odd){
+				--col-m: 0 37px 0 0;
+				--txt-mw: 400px;
+			}
+			&:nth-child(even){
+				@include media-breakpoint-up(md){
+					flex-direction: row-reverse;
+				}
+				--col-m: 0 0 0 65px;
+
+				--txt-mw: 473px;
+			}
+
+			padding-bottom: 21px;
+			@include media-breakpoint-up(xl){
+				padding-bottom: rem(40);
+			}
+			@include media-breakpoint-up(xxl){
+				padding-bottom: 110px;
+			}
+
+			&:last-child{
+				padding-bottom: 0;
+			}
+		}
+	}
+
+
+} // end.sReady
