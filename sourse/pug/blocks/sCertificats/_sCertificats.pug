@@ -15,8 +15,8 @@ mixin sCertificats(data)
 mixin cetificatSlide(imgNum)
 	.swiper-slide
 		+e.box
-			+e.img-cont(href='#')
+			+e.img-cont(href=`img/@2x/cert-${imgNum}` data-fancybox=`officeImg1`)
 				img.swiper-lazy(src='' data-src=`img/@2x/cert-${imgNum}`  alt="")
-			+e.scale-link(href='#') Увеличить
+			+e.scale-link(href=`img/@2x/cert-${imgNum}` data-fancybox=`officeImg2`) Увеличить
 
 
