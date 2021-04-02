@@ -1,0 +1,21 @@
+mixin sThanks(data)
+	// start sThanks
+	+b.SECTION.sThanks.section#sThanks&attributes(attributes)
+		+e.bg
+			img(loading="lazy" src="img/svg/big-logo.svg" alt="")
+		+e.container.container-fluid
+			+b.section-title
+				+e.row.row
+					.col-auto
+						+e.back-link(href='#')
+							+icon('arrow-left')
+			+e.content
+				+e.logo
+					img(loading="lazy" src="img/svg/thanks-logo.svg" alt="")
+				+e.H1.title Спасибо!
+				+e.descr
+					| Мы приняли вашу заявку и свяжемся
+					br
+					| с Вами в течении 15 минут!
+				+e.main-btn(href='/') На главную
+	// end sThanks

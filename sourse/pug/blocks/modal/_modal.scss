@@ -1,12 +1,13 @@
 .modal-win {
-	// display: block;
-	width: 100%;
+	color: $white;
+	background-color: $black!important;
+
+	max-width: 100%;
+	width: 480px;
 	position: relative;
-	max-width: rem(500);
 
 	.modal-content {
-		// max-width: 485px;
-		// padding-right: 40px 15px;
+
 	}
 
 	.mfp-close {
@@ -14,6 +15,73 @@
 		font-size: 40px;
 		font-weight: 100;
 	}
+
+	.form-wrap{
+		&__title{
+			font-size: 24px;
+			margin-bottom: 30px;
+			@include media-breakpoint-up(sm){
+				font-size: rem(32px);
+				margin-bottom: rem(37);
+			}
+		}
+		&__txt{
+			font-size: 18px;
+			margin-bottom: 20px;
+			@include media-breakpoint-up(sm){
+				font-size: rem(20px);
+			}
+		}
+		&__inputs{
+			padding-bottom: 43px;
+		}
+		&__input-wrap{
+			margin-bottom: 10px;
+			@include media-breakpoint-up(sm){
+				margin-bottom: 15px;
+			}
+
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		&__input{
+			color: $white;
+			border-color: $white;
+			@include placeholder(){
+				color: rgba($white, .5);
+			}
+		}
+		&__send-btn{
+			@extend .btn;
+			@extend .btn-white;
+			min-width: 100%;
+
+			padding: 8px 20px;
+			font-size: 18px;
+			margin-bottom: 26px;
+			@include media-breakpoint-up(sm){
+				padding: 14px 20px;
+				font-size: rem(20);
+				margin-bottom: 30px;
+			}
+		}
+		&__policy{
+			font-size: 12px;
+			letter-spacing: 0.3px;
+			@include media-breakpoint-up(sm){
+				letter-spacing: 0.1px;
+			}
+
+			a{
+				color: $white;
+				&:hover{
+					color: rgba($white, .8);
+				}
+			}
+		}
+	}
+	&__{}
 }
 
 a {
@@ -24,25 +92,14 @@ a {
 	position: relative;
 }
 
-#foot-dialog {
-	h3 {
-		font-size: em(36);
-	}
-}
 
 .mfp-close {
-	user-select: none; // width: 44px;
-	// height: 44px;
-	// line-height: 44px;
+	user-select: none;
 	position: absolute;
 	right: 0;
 	top: 0;
 	text-decoration: none;
 	text-align: center;
-	opacity: .65; // padding: 0 0 18px 10px;
-	// color: #fff;
-	font-style: normal;
-	font-size: 28px;
 	font-family: Arial, Baskerville, monospace;
 	overflow: visible;
 	cursor: pointer;
@@ -58,11 +115,9 @@ a {
 	font-size: 50px;
 	font-weight: 100;
 	width: 56px;
-	height: 56px; // box-shadow: 0 10px $h2-font-size rgba(0, 0, 0, 0.15);
-	// background-color: #fff;
+	height: 56px;
 	border-radius: 50%;
 	line-height: 56px;
-	text-align: center;
 	margin-top: -5px;
 	margin-right: -5px;
 	@include mt;
@@ -72,57 +127,4 @@ a {
 	}
 }
 
-@include media-breakpoint-up(sm) {
-	.modal-text {
-		max-width: 1000px;
-	}
-}
 
-.polite {
-	.link {
-		color: $primary;
-		cursor: pointer;
-		text-decoration: underline;
-
-		:hover {
-			display: none;
-		}
-	}
-}
-
-
-// 
-@include media-breakpoint-up(xl) {}
-
-@include media-breakpoint-up(lg) {}
-
-@include media-breakpoint-up(md) {}
-
-@include media-breakpoint-up(sm) {}
-
-@include media-breakpoint-up(xs) {}
-
-// 
-@include media-breakpoint-between(md, xl) {}
-
-// 
-@include media-breakpoint-only(xs) {}
-
-@include media-breakpoint-only(sm) {}
-
-@include media-breakpoint-only(md) {}
-
-@include media-breakpoint-only(lg) {}
-
-@include media-breakpoint-only(xl) {}
-
-// 
-@include media-breakpoint-down(xl) {}
-
-@include media-breakpoint-down(lg) {}
-
-@include media-breakpoint-down(md) {}
-
-@include media-breakpoint-down(sm) {}
-
-@include media-breakpoint-down(xs) {}

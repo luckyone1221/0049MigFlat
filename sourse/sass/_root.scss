@@ -13,9 +13,17 @@
 	@include media-breakpoint-up(lg){
 		--fontSizeBase: 15.5px;
 	}
+
+	--content-w: 50%;
+	@include media-breakpoint-up(xl){
+		--content-w: 50%;
+	}
 	@include media-breakpoint-up(xxl){
 		--fontSizeBase: #{$em-base};
 		--cont-x-padd: 40px;
+	}
+	@include media-breakpoint-up(base){
+		--content-w: 55.418%;
 	}
 
 	--sPT: 20px;

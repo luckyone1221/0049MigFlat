@@ -253,7 +253,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
-	let screenName = '010.png';
+	let screenName = '013-320.png';
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
@@ -282,21 +282,18 @@ function eventHandler() {
 			loadPrevNext: true,
 			loadPrevNextAmount: 15,
 		},
+		navigation: {
+			nextEl: $(this).find('.swiper-next'),
+			prevEl: $(this).find('.swiper-prev'),
+		},
+		pagination: {
+			el: ' .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
 		// watchOverflow: true,
 		// spaceBetween: 0,
 		// loop: true,
-		// navigation: {
-		// 	nextEl: '.swiper-button-next',
-		// 	prevEl: '.swiper-button-prev',
-		// },
-		// pagination: {
-		// 	el: ' .swiper-pagination',
-		// 	type: 'bullets',
-		// 	clickable: true,
-		// 	// renderBullet: function (index, className) {
-		// 	// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-		// 	// }
-		// },
 	}
 
 	const swiper4 = new Swiper('.sBanners__slider--js', {
@@ -320,9 +317,17 @@ function eventHandler() {
 
 	//css vars
 	let header = document.querySelector(".header--js");
+	let footer = document.querySelector(".footer--js");
+	let closeSm = document.querySelector(".sm-close-js");
 	function calcCssVars() {
 		if(header){
 			document.documentElement.style.setProperty('--header-w', `${header.offsetWidth}px`);
+		}
+		if(closeSm){
+			document.documentElement.style.setProperty('--close-sm-h', `${closeSm.offsetHeight}px`);
+		}
+		if(footer){
+			document.documentElement.style.setProperty('--footer-h', `${footer.offsetHeight}px`);
 		}
 	}
 
@@ -337,6 +342,12 @@ function eventHandler() {
 		},
 		slidesPerView: 'auto',
 		breakpoints: {
+			0:{
+				spaceBetween: 16,
+			},
+			576:{
+				spaceBetween: 32,
+			},
 			992:{
 				spaceBetween: 40,
 			},
@@ -431,6 +442,23 @@ function eventHandler() {
 			loadPrevNext: true,
 			loadPrevNextAmount: 5,
 		},
+		slidesPerView: 'auto',
+		breakpoints: {
+			0:{
+				spaceBetween: 16,
+			},
+			992:{
+				spaceBetween: 40,
+			},
+			1800:{
+				spaceBetween: 64,
+			},
+		},
+	});
+
+	//sFlat
+	let sFlatSlider = new Swiper('.sFlat-slider-js', {
+		...defaultSl,
 		slidesPerView: 'auto',
 		breakpoints: {
 			0:{

@@ -1,0 +1,136 @@
+mixin sHoldService(data)
+	// start sHoldService
+	+b.SECTION.sHoldService#sHoldService&attributes(attributes)
+		+e.container
+			+e.title-and-sb
+				//-
+				+e.sm-close.sm-close-js.d-xl-none
+					+icon('cross')
+				+b.section-title
+					+e.row.row.align-items-sm-start
+						.col-auto.d-none.d-xl-block
+							+e.back-link(href='#')
+								+icon('cross')
+						.col
+							h1.mb-0
+								| Забронировать услугу
+								br
+								| MIGFlat Individual
+				+e.sidebar
+					+e.sidebar-inner
+						+e.bg
+							img(loading="lazy" src='img/@2x/service-hold-bg.jpg' alt="")
+						+form-wrap()
+							+e.title Заполните заявку
+							+e.inputs.row
+								.col-md-6.col-xl-12
+									+input('Ваше имя', 'text', undefined, 'name')
+								.col-md-6.col-xl-12
+									+input('Номер телефона', 'tel')
+								.col-md-6.col-xl-12
+									+input('E-mail', 'email')
+								.col-md-6.col-xl-12
+									+input('Интересующий район', 'text', undefined, 'i-district')
+								.col-md-6.col-xl-12
+									+input('Количество комнат', 'number', undefined, 'room-amount')
+								.col-md-6.col-xl-12
+									+input('Препочтительные этажи', 'text', undefined, 'floor')
+								.col
+									+input('Особые пожелания', 'textarea', undefined, 'wishes')
+							+e.send-btn(type='submit') Отправить
+							+e.policy
+								| Отправляя формуя принимаю условия
+								|
+								br.d-sm-none
+								a(href='#') Политики конфиденциальности
+			+e.txt-content
+				+e.descr Оказываем весь цикл услуг по продаже готовой недвижимости: от покупки квартир у застройщика в элитном районе Москвы до продажи квартиры с готовым ремонтом. Даём гарантию юридической и финансовой чистоты документов при заключении всех сделок
+				+e.sub-title По Вашему заданию:
+				+e.UL.list
+					li Подберем квартиру учитывая инвестиционную привлекательность
+					li Проверим юридическую чистоту
+					li Купим квартиру
+					li Сделаем дизайн
+					li Разработаем проектную документацию
+					li Согласуем проект с Управляющей компанией
+					li Закупим материалы для ремонта, сантехнику и электрику
+					li Выполним ремонт премиум класса
+					li Проконтролируем качество выполняемых работ
+					li Продадим вам готовый объект
+	// end sHoldService
+
+mixin sHoldService2(data)
+	// start sHoldService
+	+b.SECTION.sHoldService--trade-in#sHoldService&attributes(attributes)
+		+e.container
+			+e.title-and-sb
+				//-
+				+e.sm-close.sm-close-js.d-xl-none
+					+icon('cross')
+				+b.section-title
+					+e.row.row.align-items-sm-start
+						.col-auto.d-none.d-xl-block
+							+e.back-link(href='#')
+								+icon('cross')
+						.col
+							h1.mb-0 Trade in
+				+e.sidebar
+					+e.sidebar-inner
+						+e.bg
+							img(loading="lazy" src='img/@2x/service-hold-bg.jpg' alt="")
+						+form-wrap()
+							+e.title Заполните заявку
+							+e.inputs.row
+								.col-md-6.col-xl-12
+									+input('Ваше имя', 'text', undefined, 'name')
+								.col-md-6.col-xl-12
+									+input('Номер телефона', 'tel')
+								.col
+									+input('Опишите задачу', 'textarea', undefined, 'wishes')
+							+e.send-btn(type='submit') Отправить
+							+e.policy
+								| Отправляя формуя принимаю условия
+								|
+								br.d-sm-none
+								a(href='#') Политики конфиденциальности
+			+e.txt-content--center
+				+e.descr.mb-26 Мы готовы предложить вам квартиру с готовым ремонтом в новом жилом комплексе в престижных районах Москвы в обмен на аналогичную квартиру без отделки на специальных условиях с доплатой.
+				+e.descr.mb-0 Заполните заявку и мы свяжемся с вами в течении 15 минут и проконсультируем  по любому вопросу
+	// end sHoldService
+
+mixin sHoldService3(data)
+	// start sHoldService
+	+b.SECTION.sHoldService--trade-in#sHoldService&attributes(attributes)
+		+e.container
+			+e.title-and-sb
+				//-
+				+e.sm-close.sm-close-js.d-xl-none
+					+icon('cross')
+				+b.section-title
+					+e.row.row.align-items-sm-start
+						.col-auto.d-none.d-xl-block
+							+e.back-link(href='#')
+								+icon('cross')
+						.col
+							h1.mb-0 Trade in
+				+e.sidebar
+					+e.sidebar-inner
+						+e.bg
+							img(loading="lazy" src='img/@2x/service-hold-bg.jpg' alt="")
+						+form-wrap()
+							+e.title Заполните заявку
+							+e.inputs.row
+								.col-md-6.col-xl-12
+									+input('Ваше имя', 'text', undefined, 'name')
+								.col-md-6.col-xl-12
+									+input('Номер телефона', 'tel')
+								.col
+									+input('Опишите задачу', 'textarea', undefined, 'wishes')
+							+e.send-btn(type='submit') Отправить
+							+e.policy
+								| Отправляя формуя принимаю условия
+								|
+								br.d-sm-none
+								a(href='#') Политики конфиденциальности
+			+e.txt-content--center
+				+e.descr.mb-0 Мы не просто подберём квартиру индивидуально для Вас в новых жилых комплексах престижных районов Москвы, но и поможем приобрести квартиру с качественным ремонтом, которая станет для вас не только уютным жильём, но и надёжным вкладом ваших сбережений. Мы возьмём на себя организацию выгодных для Вас сделок купли-продажи любой сложности, в нашем штате имеются свой юрист и специалист по недвижимости с многолетним опытом работы

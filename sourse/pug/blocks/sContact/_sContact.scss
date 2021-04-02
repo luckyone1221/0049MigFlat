@@ -178,25 +178,7 @@
 			}
 		}
 		&__input-wrap{
-			input, textarea{
-				border-top: none;
-				border-right: none;
-				border-left: none;
 
-				border-bottom: 2px solid;
-				letter-spacing: 0.5px;
-
-				@include media-breakpoint-down(sm){
-					padding: 16.5px 0;
-				}
-			}
-
-			textarea{
-				height: 90px;
-				@include media-breakpoint-up(sm){
-					height: 100px;
-				}
-			}
 		}
 		&__input{
 

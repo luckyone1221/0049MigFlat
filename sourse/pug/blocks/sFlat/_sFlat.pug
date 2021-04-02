@@ -1,0 +1,82 @@
+mixin sFlat(data)
+	// start sFlat
+	+b.SECTION.sFlat#sFlat&attributes(attributes)
+		+e.container
+			//-
+			+b.section-title
+				+e.row.row.align-items-sm-center
+					.col-auto
+						+e.back-link--cross(href='#')
+							+icon('cross', "d-none d-xl-block")
+							+icon('arrow-left', "d-xl-none")
+					.col
+						h1.mb-0
+							| 3-х квартира в
+							|
+							br.d-sm-none
+							| ЖК Сердцева
+			+e.video-link.row.align-items-center(href='#')
+				.col-auto.d-block
+					+e.v-img
+						img(loading="lazy" src='img/svg/play-circle.svg' alt="")
+				+e.v-txt.col Посмотреть видео объекта
+			+e.slider-wrap
+				.swiper-container.sFlat-slider-js
+					.swiper-wrapper
+						+sFlatSlide(1)
+						+sFlatSlide(2)
+						+sFlatSlide(3)
+					+arrow()
+				.swiper-pagination
+			+e.sidebar
+				+e.head-row.row
+					+e.price-col.col-md
+						+e.price-row.row.align-items-center
+							+e.price-txt.col.col-md-12 Цена:
+							+e.price-val.col-auto.col-md-12 23 552 332 руб.
+					.col-md-auto
+						a.baner__b-link(href='#')
+							.baner__bl-txt
+								| Забронировать
+								br
+								| квартиру
+							.baner__b-img
+								img(loading="lazy" src="img/svg/arrow-r-circle.svg" alt="")
+				+e.txt-items
+					+txtItem('Адрес')
+						| г. Москва, ул. Героев
+						|
+						br.d-sm-none
+						| Сталинграда 18
+					+txtItem('Площадь')
+						| Оценка застройщиков и новостроек, оценка инфраструктуры и качества постройки. Оценка качества подведенных коммуникаций, месторасположения комплекса, наличие паркинга, детской площадкиОценка застройщиков и новостроек, оценка инфраструктуры и качества постройки.
+					+txtItem('Полы')
+						| Оценка застройщиков и новостроек, оценка инфраструктуры и качества постройки. Оценка качества подведенных коммуникаций, месторасположения комплекса, наличие
+						|
+						br.d-none.d-xxl-block
+						| паркинга, детской площадки
+					+txtItem('Подоконники')
+						| Оценка застройщиков и новостроек, оценка инфраструктуры и качества постройки. Оценка качества подведенных коммуникаций,
+					+txtItem('Электрика')
+						| Новостроек, оценка инфраструктуры и качества постройки. Оценка качества подведенных коммуникаций, месторасположения комплекса, наличие паркинга, детской площадки
+					+txtItem('Сантехника')
+						| Новостроек, оценка инфраструктуры и качества постройки. Оценка качества подведенных коммуникаций, месторасположения комплекса, наличие паркинга, детской площадки
+				+e.H2.relative-title Похожие объекты
+				+e.relative-sl-wrap
+					.swiper-container.sCompleated-slider-js
+						.swiper-wrapper
+							+compleatedSlide(2,'3-х квартира в ЖК Сердцева',10, 0)
+							+compleatedSlide(3,'Дом в КП Мартемьяново',10, 0)
+							+compleatedSlide(1,'Квартира в ЖК Измайловский ',12, 0)
+			+footer()
+	// end sFlat
+mixin txtItem(title)
+	+e.t-item
+		+e.t-title=title
+		+e.t-content
+			block
+
+mixin sFlatSlide(imgNum)
+	.swiper-slide
+		+e.slide-img(href="#")
+			img.swiper-lazy(src="" data-src=`img/@2x/compleated-${imgNum}.jpg` alt="")

@@ -102,6 +102,30 @@
 				}
 			}
 
+			@include media-breakpoint-up(xl){
+				.twin,
+				.face{
+					display: block;
+					@include mt();
+					height: 0;
+				}
+
+				.face{
+					opacity: 1;
+				}
+				.twin{
+					opacity: 0;
+				}
+				&:hover{
+					.face{
+						opacity: 0;
+					}
+					.twin{
+						opacity: 1;
+					}
+				}
+			}
+
 		}
 
 

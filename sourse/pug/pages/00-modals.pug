@@ -1,0 +1,39 @@
+extends layout/main.pug
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sMain/_sMain.pug
+include ../blocks/sTeam/_sTeam.pug
+include ../blocks/sPolicy/_sPolicy.pug
+include ../blocks/sArmor/_sArmor.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sTradeIn/_sTradeIn.pug
+include ../blocks/sReady/_sReady.pug
+include ../blocks/sCompleated/_sCompleated.pug
+include ../blocks/sIndividual/_sIndividual.pug
+include ../blocks/sCertificats/_sCertificats.pug
+include ../blocks/sFlat/_sFlat.pug
+include ../blocks/sHoldService/_sHoldService.pug
+
+block variables
+	- let  mainPage= ''
+	- let  bg= null
+block title
+	- let  title= '012-service'
+	title= title
+block pagecontent
+	+mMenu()
+	.container-fluid
+		.row
+			.col-12
+				.row
+					.col
+					.col-auto
+						+header()(style="position: static")
+			.col-auto
+				a.btn.btn-primary.link-modal-js(href='#modal-hold-flat') Забронировать квартиру
+			.col-auto
+				a.btn.btn-primary.link-modal-js(href='#modal-call') Закажите звонок
+			.col-auto
+				a.btn.btn-primary.link-modal-js(href='#modal-order') Заполните заявку
+	+footer()

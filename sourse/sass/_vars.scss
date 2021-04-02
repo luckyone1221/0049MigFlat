@@ -15,11 +15,13 @@ $rfs-breakpoint: 1200px !default;
 // scss-docs-start gray-color-variables
 $white: #fff !default;
 $gray-100: #F1F1F1;
+$gray-110: #EBEBEB;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
 $gray-600: #6c757d !default;
+$gray-640: #C4C4C4;
 $gray-650: #656565;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
@@ -92,7 +94,9 @@ $theme-colors: ("primary": $primary,
   "warning": $warning,
   "danger": $danger,
   "light": $light,
-  "dark": $dark) !default;
+  "white": $white,
+  "dark": $dark,
+  "black": $black) !default;
 // scss-docs-end theme-colors-map
 
 // The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
@@ -260,6 +264,7 @@ $spacers: (0: 0,
   10: 10px,
   12: 12px,
   20: 20px,
+  26: rem(26),
 ) !default;
 
 $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
@@ -692,7 +697,7 @@ $input-focus-bg: $input-bg !default;
 $input-focus-border-color: tint-color($component-active-bg, 50%) !default;
 $input-focus-color: $input-color !default;
 $input-focus-width: $input-btn-focus-width !default;
-$input-focus-box-shadow: $input-btn-focus-box-shadow !default;
+$input-focus-box-shadow: none !default;
 
 $input-placeholder-color: rgba($black, .5) !default;
 $input-plaintext-color: $body-color !default;

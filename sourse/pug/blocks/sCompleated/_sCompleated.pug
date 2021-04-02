@@ -26,10 +26,10 @@ mixin compleatedSlide(imgNum, name, phot, vid)
 	.swiper-slide
 		if block
 			//br can be removed, need them for pp
-			+e.H2.name(href="#")
+			+e.name.d-block(href="#")
 				block
 		else
-			+e.H2.name(href="#")=name
+			+e.name.d-block(href="#")=name
 		+e.img(href="#")
 			img.swiper-lazy(src="#" data-src=`img/@2x/compleated-${imgNum}.jpg` alt="")
 		+e.foot

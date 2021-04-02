@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>012-service</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+		<link href="libs/swiper/css/swiper.min.css" rel="stylesheet"/>
+		<link href="css/main.min.css" rel="stylesheet"/>
+	</head>
+	<body class="bg-black">
+		<div class="main-wrapper">
+			<!-- start sHoldService-->
+			<section class="sHoldService sHoldService--trade-in" id="sHoldService">
+				<div class="sHoldService__container">
+					<div class="sHoldService__title-and-sb">
+						<div class="sHoldService__sm-close sm-close-js d-xl-none">
+							<svg class="icon icon-cross ">
+								<use xlink:href="img/svg/sprite.svg#cross"></use>
+							</svg>
+						</div>
+						<div class="section-title">
+							<div class="section-title__row row align-items-sm-start">
+								<div class="col-auto d-none d-xl-block"><a class="section-title__back-link" href="#">
+									<svg class="icon icon-cross ">
+										<use xlink:href="img/svg/sprite.svg#cross"></use>
+									</svg></a>
+								</div>
+								<div class="col">
+									<h1 class="mb-0">Trade in</h1>
+								</div>
+							</div>
+						</div>
+						<div class="sHoldService__sidebar">
+							<div class="sHoldService__sidebar-inner">
+								<div class="sHoldService__bg"><img loading="lazy" src="img/@2x/service-hold-bg.jpg" alt=""/>
+								</div>
+								<div class="form-wrap">
+									<form>
+										<div class="form-wrap__title">Заполните заявку
+										</div>
+										<div class="form-wrap__inputs row">
+											<div class="col-md-6 col-xl-12">
+												<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="name" type="text" placeholder="Ваше имя"/>
+												</div>
+												<!-- +e.input-wrap-->
+											</div>
+											<div class="col-md-6 col-xl-12">
+												<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Номер телефона"/>
+												</div>
+												<!-- +e.input-wrap-->
+											</div>
+											<div class="col">
+												<div class="form-wrap__input-wrap form-group"><textarea class="form-wrap__input form-control" name="wishes" placeholder="Опишите задачу"></textarea>
+												</div>
+												<!-- +e.input-wrap-->
+											</div>
+										</div>
+										<button class="form-wrap__send-btn" type="submit">Отправить
+										</button>
+										<div class="form-wrap__policy">
+											Отправляя формуя принимаю условия
+											<br class="d-sm-none"/><a href="#">Политики конфиденциальности</a>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="sHoldService__txt-content sHoldService__txt-content--center">
+						<div class="sHoldService__descr mb-26">Мы готовы предложить вам квартиру с готовым ремонтом в новом жилом комплексе в престижных районах Москвы в обмен на аналогичную квартиру без отделки на специальных условиях с доплатой.
+						</div>
+						<div class="sHoldService__descr mb-0">Заполните заявку и мы свяжемся с вами в течении 15 минут и проконсультируем  по любому вопросу
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sHoldService-->
+		</div>
+		<!--  start modals-->
+		<div class="modal-win" id="modal-hold-flat" style="display: none">
+			<div class="form-wrap text-center">
+				<form>
+					<div class="form-wrap__title">Забронировать<br/>квартиру
+					</div>
+					<div class="form-wrap__txt">Оставьте Ваши контактные данные
+					</div>
+					<div class="form-wrap__inputs">
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="name" type="text" placeholder="Ваше имя"/>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Номер телефона"/>
+						</div>
+						<!-- +e.input-wrap-->
+					</div>
+					<button class="form-wrap__send-btn" type="submit">Отправить
+					</button>
+					<div class="form-wrap__policy">
+						Отправляя формуя принимаю условия
+						<a href="#">Политики конфиденциальности</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- #modal-hold-flat-->
+		<div class="modal-win" id="modal-call" style="display: none">
+			<div class="form-wrap text-center">
+				<form>
+					<div class="form-wrap__title">Закажите звонок
+					</div>
+					<div class="form-wrap__txt">
+						И мы свяжемся с вами в течении
+						<br class="d-none d-sm-block"/>15 минут и проконсультируем
+						<br class="d-none d-sm-block"/>по любому вопросу
+					</div>
+					<div class="form-wrap__inputs">
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="name" type="text" placeholder="Ваше имя"/>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Номер телефона"/>
+						</div>
+						<!-- +e.input-wrap-->
+					</div>
+					<button class="form-wrap__send-btn" type="submit">Отправить
+					</button>
+					<div class="form-wrap__policy">
+						Отправляя формуя принимаю условия
+						<a href="#">Политики конфиденциальности</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- #modal-call-->
+		<div class="modal-win" id="modal-order" style="display: none">
+			<div class="form-wrap text-center">
+				<form>
+					<div class="form-wrap__title">Закажите звонок
+					</div>
+					<div class="form-wrap__txt">
+						И мы свяжемся с вами в течении
+						<br class="d-none d-sm-block"/>15 минут и проконсультируем
+						<br class="d-none d-sm-block"/>по любому вопросу
+					</div>
+					<div class="form-wrap__inputs">
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="name" type="text" placeholder="Ваше имя"/>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Номер телефона"/>
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group"><textarea class="form-wrap__input form-control" name="textarea" placeholder="Ваш вопрос"></textarea>
+						</div>
+						<!-- +e.input-wrap-->
+					</div>
+					<button class="form-wrap__send-btn" type="submit">Отправить
+					</button>
+					<div class="form-wrap__policy">
+						Отправляя формуя принимаю условия
+						<a href="#">Политики конфиденциальности</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- #modal-order-->
+		<!-- end modals-->
+		<link href="libs/@fancyapps/fancybox/jquery.fancybox.min.css" rel="stylesheet"/>
+		<!-- modal libs-->
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
+		<!-- modal libs-->
+		<!-- slider libs-->
+		<script src="libs/swiper/js/swiper.min.js"> </script>
+		<!-- /slider libs-->
+		<script src="libs/inputmask/inputmask.min.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+</html>

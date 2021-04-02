@@ -1,0 +1,28 @@
+extends layout/main.pug
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sMain/_sMain.pug
+include ../blocks/sTeam/_sTeam.pug
+include ../blocks/sPolicy/_sPolicy.pug
+include ../blocks/sArmor/_sArmor.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sTradeIn/_sTradeIn.pug
+include ../blocks/sReady/_sReady.pug
+include ../blocks/sCompleated/_sCompleated.pug
+include ../blocks/sIndividual/_sIndividual.pug
+include ../blocks/sCertificats/_sCertificats.pug
+include ../blocks/sFlat/_sFlat.pug
+
+
+block variables
+	- let  mainPage= null 
+	- let  bg= null
+block title
+	- let  title= '011-flat'
+	title= title
+block pagecontent
+	+mMenu()
+	+header()(class="d-xl-none")
+	+sFlat()
+	//-+footer()

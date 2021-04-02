@@ -50,4 +50,10 @@
 	&__{}
 	&__{}
 	&__{}
+
+	&.footer-thanks{
+		@include media-breakpoint-down(md){
+			background-color: $white;
+		}
+	}
 }

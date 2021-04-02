@@ -261,7 +261,7 @@ function eventHandler() {
 	JSCCommon.animateScroll(); // JSCCommon.CustomInputFile(); 
 
 	var x = window.location.host;
-	var screenName = '010.png';
+	var screenName = '013-320.png';
 
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
@@ -287,21 +287,18 @@ function eventHandler() {
 		lazy: {
 			loadPrevNext: true,
 			loadPrevNextAmount: 15
+		},
+		navigation: {
+			nextEl: $(this).find('.swiper-next'),
+			prevEl: $(this).find('.swiper-prev')
+		},
+		pagination: {
+			el: ' .swiper-pagination',
+			type: 'bullets',
+			clickable: true
 		} // watchOverflow: true,
 		// spaceBetween: 0,
 		// loop: true,
-		// navigation: {
-		// 	nextEl: '.swiper-button-next',
-		// 	prevEl: '.swiper-button-prev',
-		// },
-		// pagination: {
-		// 	el: ' .swiper-pagination',
-		// 	type: 'bullets',
-		// 	clickable: true,
-		// 	// renderBullet: function (index, className) {
-		// 	// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-		// 	// }
-		// },
 
 	};
 	var swiper4 = new Swiper('.sBanners__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
@@ -320,10 +317,20 @@ function eventHandler() {
 	}); //css vars
 
 	var header = document.querySelector(".header--js");
+	var footer = document.querySelector(".footer--js");
+	var closeSm = document.querySelector(".sm-close-js");
 
 	function calcCssVars() {
 		if (header) {
 			document.documentElement.style.setProperty('--header-w', "".concat(header.offsetWidth, "px"));
+		}
+
+		if (closeSm) {
+			document.documentElement.style.setProperty('--close-sm-h', "".concat(closeSm.offsetHeight, "px"));
+		}
+
+		if (footer) {
+			document.documentElement.style.setProperty('--footer-h', "".concat(footer.offsetHeight, "px"));
 		}
 	}
 
@@ -342,6 +349,12 @@ function eventHandler() {
 		},
 		slidesPerView: 'auto',
 		breakpoints: {
+			0: {
+				spaceBetween: 16
+			},
+			576: {
+				spaceBetween: 32
+			},
 			992: {
 				spaceBetween: 40
 			},
@@ -435,7 +448,22 @@ function eventHandler() {
 				spaceBetween: 64
 			}
 		}
-	}); //end luckyone js
+	}); //sFlat
+
+	var sFlatSlider = new Swiper('.sFlat-slider-js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		slidesPerView: 'auto',
+		breakpoints: {
+			0: {
+				spaceBetween: 16
+			},
+			992: {
+				spaceBetween: 40
+			},
+			1800: {
+				spaceBetween: 64
+			}
+		}
+	})); //end luckyone js
 	//todo
 	//1.clean js file
 	//2.
