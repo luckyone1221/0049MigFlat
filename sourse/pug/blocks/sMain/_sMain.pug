@@ -5,10 +5,10 @@ mixin sMain(data)
 			+pic('main-bg.jpg')(class="sMain__bg")
 			+e.row.row
 				//-1 row
-				+e.col.col-lg-2
-				+e.col.col-lg-2
+				+e.col.col-lg-2.d-xl-none.d-xxl-block
+				+e.col.col-lg-2.d-xl-none.d-xxl-block
 				+e.col--default.col-lg-2(href="#")
-					+e.txt О компании
+					+e.txt.mb-xl-auto.mb-xxl-0 О компании
 				//-
 				+e.col--header.x2.off-x2.col-lg-4.offset-lg-2
 					+mHeader()
@@ -64,7 +64,7 @@ mixin sMain(data)
 						br
 						| из наличия
 				//-
-				+e.col--black.off-x1.col-lg-2.offset-lg-2.offset-xxl-0(href="#")
+				+e.col--black.off-x1.col-lg-2.offset-lg-2.offset-xl-0(href="#")
 					+e.txt--primary
 						| MIGFlat
 						|
@@ -76,7 +76,7 @@ mixin sMain(data)
 						br.d-block.d-lg-none
 						| под вашу задачу
 				//-
-				+e.col--default.col-lg-2(href='#')
+				+e.col--default.works-col.col-lg-2(href='#')
 					+e.txt.mb-auto
 						span.face
 							| Наши
@@ -91,12 +91,12 @@ mixin sMain(data)
 				//-4 row
 				+e.col--footer.x2.col-lg-4
 					+mfooter()
-				+e.col.col-lg-2
-				+e.col.col-lg-2.d-xxl-block.d-none
-				+e.col--default.col-lg-2(href='#')
+				+e.col.col-lg-2.d-xl-none.d-xxl-block
+				+e.col.col-lg-2.d-xl-none.d-xxl-block
+				+e.col--default.contacts-col.col-lg-2(href='#')
 					+e.txt.mb-auto Контакты
 				.pb-12.d-lg-none.d-block
-				+e.col.col-lg-2
+				+e.col.col-lg-2.d-xxl-block.d-none
 	// end sMain
 
 mixin mHeader()
