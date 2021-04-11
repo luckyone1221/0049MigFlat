@@ -472,6 +472,18 @@ function eventHandler() {
 			},
 		},
 	});
+	$('.custom-modal-js').click(function (){
+		event.preventDefault();
+
+		let href = this.getAttribute('href');
+		let modal = document.querySelector(href);
+		modal.classList.add('active');
+		$('body').addClass('fixed2');
+	});
+	$('.close-mw-js').click(function (){
+		$('body').removeClass('fixed2');
+		$('.mod-win-cont-js').removeClass('active');
+	})
 
 	//end luckyone js
 

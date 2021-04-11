@@ -11,7 +11,7 @@
 1. <https://luckyone1221.github.io/0049MigFlat/public/09-individual.html>
 1. <https://luckyone1221.github.io/0049MigFlat/public/010-about.html>
 1. <https://luckyone1221.github.io/0049MigFlat/public/011-flat.html>
-1. <https://luckyone1221.github.io/0049MigFlat/public/012-service.html>
+<!--1. <https://luckyone1221.github.io/0049MigFlat/public/012-service.html>
 1. <https://luckyone1221.github.io/0049MigFlat/public/012-service-2.html>
-1. <https://luckyone1221.github.io/0049MigFlat/public/012-service-3.html>
+1. <https://luckyone1221.github.io/0049MigFlat/public/012-service-3.html>-->
 1. <https://luckyone1221.github.io/0049MigFlat/public/013-thanks.html>

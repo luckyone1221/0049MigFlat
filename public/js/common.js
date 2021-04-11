@@ -463,7 +463,18 @@ function eventHandler() {
 				spaceBetween: 64
 			}
 		}
-	})); //end luckyone js
+	}));
+	$('.custom-modal-js').click(function () {
+		event.preventDefault();
+		var href = this.getAttribute('href');
+		var modal = document.querySelector(href);
+		modal.classList.add('active');
+		$('body').addClass('fixed2');
+	});
+	$('.close-mw-js').click(function () {
+		$('body').removeClass('fixed2');
+		$('.mod-win-cont-js').removeClass('active');
+	}); //end luckyone js
 	//todo
 	//1.clean js file
 	//2.

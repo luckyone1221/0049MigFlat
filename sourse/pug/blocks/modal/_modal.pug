@@ -1,5 +1,13 @@
+include ../../blocks/sHoldService/_sHoldService.pug
+
 mixin modal()
 	//  start modals
+	.mod-win-cont-js.bg-primary#sHoldService
+		+sHoldService()
+	.mod-win-cont-js.bg-black#sHoldService2
+		+sHoldService2()
+	.mod-win-cont-js.bg-black#sHoldService3
+		+sHoldService3()
 	+b.modal-win(id="modal-hold-flat" class=" " style="display: none")
 		+form-wrap(class="text-center")
 			+e.title

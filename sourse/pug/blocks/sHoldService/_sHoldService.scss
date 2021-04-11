@@ -1,5 +1,7 @@
 // start .sHoldService
 .sHoldService {
+	flex-grow: 1;
+
 	--bg-img-col:rgba(180, 150, 118, 0.6);
 	--page-bg: #{$primary};
 	--form-wr-fg: 1;
@@ -122,8 +124,8 @@
 			top: 0;
 			height: calc(var(--vh, 1vh) * 100);
 			width: calc(100% -  var(--content-w, 55%));
-			overflow-y: auto;
-			overflow-x: hidden;
+			//overflow-y: auto;
+			//overflow-x: hidden;
 		}
 	}
 	&__sidebar-inner{
