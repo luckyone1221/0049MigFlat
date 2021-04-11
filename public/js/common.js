@@ -450,7 +450,24 @@ function eventHandler() {
 		}
 	}); //sFlat
 
-	var sFlatSlider = new Swiper('.sFlat-slider-js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+	var sFlatSlider = new Swiper('.sFlat-slider-js', {
+		//...defaultSl,
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 15
+		},
+		navigation: {
+			// nextEl: $(this).find('.swiper-next'),
+			// prevEl: $(this).find('.swiper-prev'),
+			nextEl: '.sFlat-swiper-next',
+			prevEl: '.sFlat-swiper-prev'
+		},
+		pagination: {
+			el: ' .swiper-pagination',
+			type: 'bullets',
+			clickable: true
+		},
+		//
 		slidesPerView: 'auto',
 		breakpoints: {
 			0: {
@@ -463,7 +480,8 @@ function eventHandler() {
 				spaceBetween: 64
 			}
 		}
-	}));
+	}); //new for sasha
+
 	$('.custom-modal-js').click(function () {
 		event.preventDefault();
 		var href = this.getAttribute('href');
@@ -474,7 +492,8 @@ function eventHandler() {
 	$('.close-mw-js').click(function () {
 		$('body').removeClass('fixed2');
 		$('.mod-win-cont-js').removeClass('active');
-	}); //end luckyone js
+	}); //end new for sasha
+	//end luckyone js
 	//todo
 	//1.clean js file
 	//2.

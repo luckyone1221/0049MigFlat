@@ -458,7 +458,23 @@ function eventHandler() {
 
 	//sFlat
 	let sFlatSlider = new Swiper('.sFlat-slider-js', {
-		...defaultSl,
+		//...defaultSl,
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 15,
+		},
+		navigation: {
+			// nextEl: $(this).find('.swiper-next'),
+			// prevEl: $(this).find('.swiper-prev'),
+			nextEl: '.sFlat-swiper-next',
+			prevEl: '.sFlat-swiper-prev',
+		},
+		pagination: {
+			el: ' .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
+		//
 		slidesPerView: 'auto',
 		breakpoints: {
 			0:{
@@ -472,6 +488,7 @@ function eventHandler() {
 			},
 		},
 	});
+	//new for sasha
 	$('.custom-modal-js').click(function (){
 		event.preventDefault();
 
@@ -484,6 +501,7 @@ function eventHandler() {
 		$('body').removeClass('fixed2');
 		$('.mod-win-cont-js').removeClass('active');
 	})
+	//end new for sasha
 
 	//end luckyone js
 

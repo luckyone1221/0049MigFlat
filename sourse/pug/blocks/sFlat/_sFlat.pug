@@ -26,7 +26,10 @@ mixin sFlat(data)
 						+sFlatSlide(1)
 						+sFlatSlide(2)
 						+sFlatSlide(3)
-					+arrow()
+					.swiper-prev.sFlat-swiper-prev
+						+icon('chevron-left')
+					.swiper-next.sFlat-swiper-next
+						+icon('chevron-right')
 				.swiper-pagination
 			+e.sidebar
 				+e.head-row.row
