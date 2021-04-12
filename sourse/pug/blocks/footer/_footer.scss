@@ -52,6 +52,8 @@
 	&__{}
 
 	&.footer-thanks{
+		position: relative;
+		z-index: 98;
 		@include media-breakpoint-down(md){
 			background-color: $white;
 		}
