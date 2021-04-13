@@ -61,10 +61,10 @@
 
 			width: 248px;
 			@include media-breakpoint-up(md){
-				width: calc((100% / 2) * (16px * 1 / 2));
+				width: calc((100% / 2.2) + (16px * 1 / 2));
 			}
 			@include media-breakpoint-up(lg){
-				width: 320px;
+				width: calc((100% / 3.5) + (16px * 1 / 2));
 			}
 			@include media-breakpoint-up(xxl){
 				width: 480px;
