@@ -7,17 +7,17 @@ mixin sMain(data)
 				//-1 row
 				+e.col.col-lg-2.d-xl-none.d-xxl-block
 				+e.col.col-lg-2.d-xl-none.d-xxl-block
-				+e.col--default.col-lg-2(href="#")
+				+e.col--default.company-col.col-lg-2(href="#")
 					+e.txt.mb-xl-auto.mb-xxl-0 О компании
 				//-
-				+e.col--header.x2.off-x2.col-lg-4.offset-lg-2
+				+e.col--header.x2.off-x2.col-lg-4.offset-lg-2.offset-xl-0
 					+mHeader()
 				//-2 row
-				+e.col.col-lg-2
-				+e.col--default.col-lg-2(href="#")
-					+e.txt Команда
+				+e.col.col-lg-2.d-xl-none.d-xxl-block
+				+e.col--default.team-col.col-lg-2(href="#")
+					+e.txt.mb-xl-auto.mb-xxl-0 Команда
 				//-
-				+e.col--primary.col-lg-2.d-none.d-lg-block
+				+e.col--primary.logo-col.col-lg-2.d-none.d-lg-block
 					+e.logo(href='#')
 						img(loading="lazy" src="img/svg/txt-logo-white.svg" alt="")
 					+e.H4.logo-name.mb-0
@@ -29,7 +29,7 @@ mixin sMain(data)
 						br
 						| квартир
 				//-
-				+e.col--title.x3.col-lg-6.me-auto
+				+e.col--title.title-col.x3.col-lg-6.me-auto
 					+e.H1.title
 						| Продажа
 						| квартир&nbsp;бизнес
@@ -38,8 +38,8 @@ mixin sMain(data)
 						| и&nbsp;на&nbsp;заказ
 						| в&nbsp;Москве и&nbsp;МО
 				//-3 row
-				+e.col--default.off-x1.col-lg-2(href="#")
-					+e.txt
+				+e.col--default.flat-col.offset-xl-2.offset-xxl-0.off-x1.col-lg-2(href="#")
+					+e.txt.mb-xl-auto.mb-xxl-0
 						| Квартиры
 						|
 						br.d-none.d-lg-block
@@ -48,12 +48,12 @@ mixin sMain(data)
 						br.d-none.d-lg-block
 						| в продаже
 				//-
-				+e.col--default.col-lg-2(href="#")
+				+e.col--default.trade-col.col-lg-2(href="#")
 					+e.txt Trade in
 					+e.descr.d-none.d-lg-block
 						| Обмен вашей квартиры без ремонта на нашу квартиру с ремонтом с&nbsp;доплатой
 				//-
-				+e.col--black.col-lg-2(href="#")
+				+e.col--black.armor-col.col-lg-2.offset-xl-2.offset-xxl-0(href="#")
 					+e.txt--primary
 						| MIGFlat
 						|
@@ -64,7 +64,7 @@ mixin sMain(data)
 						br
 						| из наличия
 				//-
-				+e.col--black.off-x1.col-lg-2.offset-lg-2.offset-xl-0(href="#")
+				+e.col--black.individual-col.off-x1.col-lg-2.offset-lg-2.offset-xl-0(href="#")
 					+e.txt--primary
 						| MIGFlat
 						|

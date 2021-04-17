@@ -70,7 +70,7 @@
 	}
 
 	&__title-and-sb{
-		padding: var(--close-sm-h) var(--cont-x-padd, 20px) 0;
+		padding: 10px var(--cont-x-padd, 20px) 0;
 
 		margin-bottom: 20px;
 		@include media-breakpoint-up(sm){
@@ -95,15 +95,16 @@
 	&__sm-close{
 		height: 56px;
 		width: 100%;
-		position: fixed;
+		//position: fixed;
 		top: 0;
 		left: 0;
-		z-index: 99;
+		//z-index: 99;
 		//background-color: rgba($primary, .2);
 
 		display: flex;
 		align-items: center;
-		padding: 10px var(--cont-x-padd, 20px);
+		//padding: 10px var(--cont-x-padd, 20px);
+		padding: 10px;
 
 		.icon{
 			font-size: 18px;
