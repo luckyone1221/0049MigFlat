@@ -1,4 +1,4 @@
-mixin sCompleated(data)
+mixin sCompleated(btn)
 	// start sCompleated
 	+b.SECTION.sCompleated.section#sCompleated&attributes(attributes)
 		+e.container.container-fluid
@@ -10,6 +10,9 @@ mixin sCompleated(data)
 					|
 					br.d-sm-none
 					| работы
+			if btn
+				.text-center.pt-3
+					a.btn.btn-primary.btn-lg.p-4(href='#') MIGFlat бронирование
 			+e.slider-wrap
 				.swiper-container.sCompleated-slider-js
 					.swiper-wrapper

@@ -1,4 +1,4 @@
-mixin header()
+mixin header(h)
 	// start header
 	+b.HEADER.header--js#header&attributes(attributes)
 		+e.row.row.align-items-center
@@ -9,8 +9,9 @@ mixin header()
 					img(loading="lazy" src="img/svg/m-h-wa.svg" alt="")
 			.col-auto.d-none.d-sm-block
 				+e.call-back(href="#") Обратный звонок
-			+e.btn-col.col-auto
-				+e.reserve-btn(href='#') MIGFlat бронирование
+			if !h
+				+e.btn-col.col-auto
+					+e.reserve-btn(href='#') MIGFlat бронирование
 			.col.col-lg-auto.order-first.order-lg-0
 				+b.burger--black.d-sm-none.burger-js
 				+e.burger.d-sm-block.d-none.burger-js
