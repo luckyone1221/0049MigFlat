@@ -1,6 +1,8 @@
 // start .sCompleated
 .sCompleated {
 	flex-grow: 1;
+	position: relative;
+	z-index: 99;
 
 	--sTPB: 27px;
 	--sPB: 7px;
@@ -16,9 +18,20 @@
 	flex-direction: column;
 	&__container{
 		flex-grow: 1;
-		@include media-breakpoint-up(lg){
-			display: flex;
-			flex-direction: column;
+		display: flex;
+		flex-direction: column;
+		@include media-breakpoint-down(lg){
+			.text-center.pt-3 {
+					order: -1;
+			}
+			.btn{
+				width: 100%;
+				margin-bottom: rem(30);
+				margin-top: rem(-20);
+				min-height: 40px; 
+				font-size: 14.5px;
+				padding: 10px 12px !important;
+			}
 		}
 	}
 	&__slider-wrap{
