@@ -5,15 +5,13 @@ mixin sMain(data)
 			+pic('main-bg.jpg')(class="sMain__bg")
 			+e.row.row
 				//-1 row
-				+e.col.col-lg-2.d-xl-none.d-xxl-block
-				+e.col.col-lg-2.d-xl-none.d-xxl-block
+			
 				+e.col--default.company-col.col-lg-2(href="#")
 					+e.txt.mb-xl-auto.mb-xxl-0 О компании
 				//-
-				+e.col--header.x2.off-x2.col-lg-4.offset-lg-2.offset-xl-0
+				+e.col--header.x2.off-x2.col-lg-4
 					+mHeader()
 				//-2 row
-				+e.col.col-lg-2.d-xl-none.d-xxl-block
 				+e.col--default.team-col.col-lg-2(href="#")
 					+e.txt.mb-xl-auto.mb-xxl-0 Команда
 				//-
@@ -29,7 +27,7 @@ mixin sMain(data)
 						br
 						| квартир
 				//-
-				+e.col--title.title-col.x3.col-lg-6.me-auto
+				+e.col--title.title-col.x3.col-lg-6
 					+e.H1.title
 						| Продажа
 						| квартир&nbsp;бизнес
@@ -38,7 +36,7 @@ mixin sMain(data)
 						| и&nbsp;на&nbsp;заказ
 						| в&nbsp;Москве и&nbsp;МО
 				//-3 row
-				+e.col--default.flat-col.offset-xl-2.offset-xxl-0.off-x1.col-lg-2(href="#")
+				+e.col--default.flat-col(href="#")
 					+e.txt.mb-xl-auto.mb-xxl-0
 						| Квартиры
 						|
@@ -53,7 +51,7 @@ mixin sMain(data)
 					+e.descr.d-none.d-lg-block
 						| Обмен вашей квартиры без ремонта на нашу квартиру с ремонтом с&nbsp;доплатой
 				//-
-				+e.col--black.armor-col.col-lg-2.offset-xl-2.offset-xxl-0(href="#")
+				+e.col--black.armor-col.col-lg-2(href="#")
 					+e.txt--primary
 						| MIGFlat
 						|
@@ -64,7 +62,7 @@ mixin sMain(data)
 						br
 						| из наличия
 				//-
-				+e.col--black.individual-col.off-x1.col-lg-2.offset-lg-2.offset-xl-0(href="#")
+				+e.col--black.individual-col.off-x1.col-lg-2(href="#")
 					+e.txt--primary
 						| MIGFlat
 						|
@@ -91,12 +89,9 @@ mixin sMain(data)
 				//-4 row
 				+e.col--footer.x2.col-lg-4
 					+mfooter()
-				+e.col.col-lg-2.d-xl-none.d-xxl-block
-				+e.col.col-lg-2.d-xl-none.d-xxl-block
+			
 				+e.col--default.contacts-col.col-lg-2(href='#')
-					+e.txt.mb-auto Контакты
-				.pb-12.d-lg-none.d-block
-				+e.col.col-lg-2.d-xxl-block.d-none
+					+e.txt.mb-auto Контакты 
 	// end sMain
 
 mixin mHeader()
