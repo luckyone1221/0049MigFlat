@@ -5,18 +5,18 @@ mixin sCertificats(data)
 			+e.section-title
 				h2 Сертификаты
 			+e.slider-wrap
-				.swiper-container.sCertificats-slider-js
-					.swiper-wrapper
+				+e.row.row
 						+cetificatSlide('1.jpg')
-						+cetificatSlide('2.png')
-						+cetificatSlide('3.png')
+						+cetificatSlide('2.jpg') 
+						.col-lg-5
+							p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime quae, placeat eos ipsa optio consequuntur animi deserunt reiciendis officiis explicabo!
 	// end sCertificats
 
 mixin cetificatSlide(imgNum)
-	.swiper-slide
+	.col-lg.col-sm-6
 		+e.box
 			+e.img-cont(href=`img/@2x/cert-${imgNum}` data-fancybox=`officeImg1`)
-				img.swiper-lazy(src='' data-src=`img/@2x/cert-${imgNum}`  alt="")
+				img(src=`img/@2x/cert-${imgNum}`  loading="lazy" alt="")
 			+e.scale-link(href=`img/@2x/cert-${imgNum}` data-fancybox=`officeImg2`) Увеличить
 
 
